@@ -2,7 +2,6 @@
 data/
 *.psydat
 *.psydat.*
-*.csv
 *.log
 *.bak
 *.mp4
