@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Oct 22 16:39:50 2025
+    on Tue Oct 28 20:37:50 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -64,7 +64,7 @@ or run the experiment with `--pilot` as an argument. To change what pilot
 PILOTING = core.setPilotModeFromArgs()
 # start off with values from experiment settings
 _fullScr = True
-_winSize = (1024, 768)
+_winSize = [1440, 900]
 # if in pilot mode, apply overrides according to preferences
 if PILOTING:
     # force windowed mode
@@ -133,7 +133,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version=expVersion,
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='/Users/francesco/Documents/dev/manipulation-of-belief/manipulation-of-belief.py',
+        originPath='/Users/francesco/Documents/dev/02455-Experiment-In-Cognitive-Science/manipulation-of-belief.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -205,7 +205,7 @@ def setupWindow(expInfo=None, win=None):
             monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
             backgroundImage='', backgroundFit='none',
             blendMode='avg', useFBO=True,
-            units='height',
+            units=None,
             checkTiming=False  # we're going to do this ourselves in a moment
         )
     else:
@@ -214,7 +214,7 @@ def setupWindow(expInfo=None, win=None):
         win.colorSpace = 'rgb'
         win.backgroundImage = ''
         win.backgroundFit = 'none'
-        win.units = 'height'
+        win.units = None
     if expInfo is not None:
         # get/measure frame rate if not already in expInfo
         if win._monitorFrameRate is None:
@@ -263,11 +263,23 @@ def setupDevices(expInfo, thisExp, win):
         deviceManager.addDevice(
             deviceClass='keyboard', deviceName='defaultKeyboard', backend='ptb'
         )
-    if deviceManager.getDevice('rating') is None:
-        # initialise rating
-        rating = deviceManager.addDevice(
+    if deviceManager.getDevice('rating_sam_1') is None:
+        # initialise rating_sam_1
+        rating_sam_1 = deviceManager.addDevice(
             deviceClass='keyboard',
-            deviceName='rating',
+            deviceName='rating_sam_1',
+        )
+    if deviceManager.getDevice('rating_sam_2') is None:
+        # initialise rating_sam_2
+        rating_sam_2 = deviceManager.addDevice(
+            deviceClass='keyboard',
+            deviceName='rating_sam_2',
+        )
+    if deviceManager.getDevice('rating_sam_3') is None:
+        # initialise rating_sam_3
+        rating_sam_3 = deviceManager.addDevice(
+            deviceClass='keyboard',
+            deviceName='rating_sam_3',
         )
     # return True if completed successfully
     return True
@@ -379,23 +391,45 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # --- Initialize components for Routine "video" ---
     video1 = visual.MovieStim(
         win, name='video1',
-        filename='stimuli/18840567-hd_1920_1080_30fps.mp4', movieLib='ffpyplayer',
+        filename=None, movieLib='ffpyplayer',
         loop=False, volume=1.0, noAudio=False,
         pos=(0, 0), size=(0.5, 0.5), units=win.units,
         ori=0.0, anchor='center',opacity=None, contrast=1.0,
         depth=0
     )
     
-    # --- Initialize components for Routine "SAM" ---
-    question = visual.ImageStim(
+    # --- Initialize components for Routine "SAM_1" ---
+    question_sam_1 = visual.ImageStim(
         win=win,
-        name='question', 
+        name='question_sam_1', 
         image='stimuli/sam-1.png', mask=None, anchor='center',
         ori=0.0, pos=(0, 0), draggable=False, size=(0.5, 0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=0.0)
-    rating = keyboard.Keyboard(deviceName='rating')
+    rating_sam_1 = keyboard.Keyboard(deviceName='rating_sam_1')
+    
+    # --- Initialize components for Routine "SAM_2" ---
+    question_sam_2 = visual.ImageStim(
+        win=win,
+        name='question_sam_2', 
+        image='stimuli/sam-2.png', mask=None, anchor='center',
+        ori=0.0, pos=(0, 0), draggable=False, size=(0.5, 0.5),
+        color=[1,1,1], colorSpace='rgb', opacity=None,
+        flipHoriz=False, flipVert=False,
+        texRes=128.0, interpolate=True, depth=0.0)
+    rating_sam_2 = keyboard.Keyboard(deviceName='rating_sam_2')
+    
+    # --- Initialize components for Routine "SAM_3" ---
+    question_sam_3 = visual.ImageStim(
+        win=win,
+        name='question_sam_3', 
+        image='stimuli/sam-3.png', mask=None, anchor='center',
+        ori=0.0, pos=(0, 0), draggable=False, size=(0.5, 0.5),
+        color=[1,1,1], colorSpace='rgb', opacity=None,
+        flipHoriz=False, flipVert=False,
+        texRes=128.0, interpolate=True, depth=0.0)
+    rating_sam_3 = keyboard.Keyboard(deviceName='rating_sam_3')
     
     # create some handy timers
     
@@ -434,6 +468,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     video.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
+    video1.setMovie('stimuli/18840567-hd_1920_1080_30fps.mp4')
     # store start times for video
     video.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
     video.tStart = globalClock.getTime(format='float')
@@ -456,7 +491,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Run Routine "video" ---
     video.forceEnded = routineForceEnded = not continueRoutine
-    while continueRoutine and routineTimer.getTime() < 10.0:
+    while continueRoutine and routineTimer.getTime() < 3.0:
         # get current time
         t = routineTimer.getTime()
         tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -483,7 +518,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # if video1 is stopping this frame...
         if video1.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > video1.tStartRefresh + 10-frameTolerance or video1.isFinished:
+            if tThisFlipGlobal > video1.tStartRefresh + 3-frameTolerance or video1.isFinished:
                 # keep track of stop time/frame for later
                 video1.tStop = t  # not accounting for scr refresh
                 video1.tStopRefresh = tThisFlipGlobal  # on global time
@@ -494,6 +529,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 video1.status = FINISHED
                 video1.setAutoDraw(False)
                 video1.stop()
+        if video1.isFinished:  # force-end the Routine
+            continueRoutine = False
         
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -541,31 +578,31 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     elif video.forceEnded:
         routineTimer.reset()
     else:
-        routineTimer.addTime(-10.000000)
+        routineTimer.addTime(-3.000000)
     thisExp.nextEntry()
     
-    # --- Prepare to start Routine "SAM" ---
-    # create an object to store info about Routine SAM
-    SAM = data.Routine(
-        name='SAM',
-        components=[question, rating],
+    # --- Prepare to start Routine "SAM_1" ---
+    # create an object to store info about Routine SAM_1
+    SAM_1 = data.Routine(
+        name='SAM_1',
+        components=[question_sam_1, rating_sam_1],
     )
-    SAM.status = NOT_STARTED
+    SAM_1.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
-    # create starting attributes for rating
-    rating.keys = []
-    rating.rt = []
-    _rating_allKeys = []
-    # store start times for SAM
-    SAM.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-    SAM.tStart = globalClock.getTime(format='float')
-    SAM.status = STARTED
-    thisExp.addData('SAM.started', SAM.tStart)
-    SAM.maxDuration = None
+    # create starting attributes for rating_sam_1
+    rating_sam_1.keys = []
+    rating_sam_1.rt = []
+    _rating_sam_1_allKeys = []
+    # store start times for SAM_1
+    SAM_1.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    SAM_1.tStart = globalClock.getTime(format='float')
+    SAM_1.status = STARTED
+    thisExp.addData('SAM_1.started', SAM_1.tStart)
+    SAM_1.maxDuration = None
     # keep track of which components have finished
-    SAMComponents = SAM.components
-    for thisComponent in SAM.components:
+    SAM_1Components = SAM_1.components
+    for thisComponent in SAM_1.components:
         thisComponent.tStart = None
         thisComponent.tStop = None
         thisComponent.tStartRefresh = None
@@ -577,8 +614,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     _timeToFirstFrame = win.getFutureFlipTime(clock="now")
     frameN = -1
     
-    # --- Run Routine "SAM" ---
-    SAM.forceEnded = routineForceEnded = not continueRoutine
+    # --- Run Routine "SAM_1" ---
+    SAM_1.forceEnded = routineForceEnded = not continueRoutine
     while continueRoutine:
         # get current time
         t = routineTimer.getTime()
@@ -587,51 +624,51 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *question* updates
+        # *question_sam_1* updates
         
-        # if question is starting this frame...
-        if question.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # if question_sam_1 is starting this frame...
+        if question_sam_1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            question.frameNStart = frameN  # exact frame index
-            question.tStart = t  # local t and not account for scr refresh
-            question.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(question, 'tStartRefresh')  # time at next scr refresh
+            question_sam_1.frameNStart = frameN  # exact frame index
+            question_sam_1.tStart = t  # local t and not account for scr refresh
+            question_sam_1.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(question_sam_1, 'tStartRefresh')  # time at next scr refresh
             # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'question.started')
+            thisExp.timestampOnFlip(win, 'question_sam_1.started')
             # update status
-            question.status = STARTED
-            question.setAutoDraw(True)
+            question_sam_1.status = STARTED
+            question_sam_1.setAutoDraw(True)
         
-        # if question is active this frame...
-        if question.status == STARTED:
+        # if question_sam_1 is active this frame...
+        if question_sam_1.status == STARTED:
             # update params
             pass
         
-        # *rating* updates
+        # *rating_sam_1* updates
         waitOnFlip = False
         
-        # if rating is starting this frame...
-        if rating.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # if rating_sam_1 is starting this frame...
+        if rating_sam_1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            rating.frameNStart = frameN  # exact frame index
-            rating.tStart = t  # local t and not account for scr refresh
-            rating.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(rating, 'tStartRefresh')  # time at next scr refresh
+            rating_sam_1.frameNStart = frameN  # exact frame index
+            rating_sam_1.tStart = t  # local t and not account for scr refresh
+            rating_sam_1.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(rating_sam_1, 'tStartRefresh')  # time at next scr refresh
             # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'rating.started')
+            thisExp.timestampOnFlip(win, 'rating_sam_1.started')
             # update status
-            rating.status = STARTED
+            rating_sam_1.status = STARTED
             # keyboard checking is just starting
             waitOnFlip = True
-            win.callOnFlip(rating.clock.reset)  # t=0 on next screen flip
-            win.callOnFlip(rating.clearEvents, eventType='keyboard')  # clear events on next screen flip
-        if rating.status == STARTED and not waitOnFlip:
-            theseKeys = rating.getKeys(keyList=['1','2','3','4','5'], ignoreKeys=["escape"], waitRelease=False)
-            _rating_allKeys.extend(theseKeys)
-            if len(_rating_allKeys):
-                rating.keys = _rating_allKeys[-1].name  # just the last key pressed
-                rating.rt = _rating_allKeys[-1].rt
-                rating.duration = _rating_allKeys[-1].duration
+            win.callOnFlip(rating_sam_1.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(rating_sam_1.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if rating_sam_1.status == STARTED and not waitOnFlip:
+            theseKeys = rating_sam_1.getKeys(keyList=['1','2','3','4','5','6','7','8','9'], ignoreKeys=["escape"], waitRelease=False)
+            _rating_sam_1_allKeys.extend(theseKeys)
+            if len(_rating_sam_1_allKeys):
+                rating_sam_1.keys = _rating_sam_1_allKeys[-1].name  # just the last key pressed
+                rating_sam_1.rt = _rating_sam_1_allKeys[-1].rt
+                rating_sam_1.duration = _rating_sam_1_allKeys[-1].duration
                 # a response ends the routine
                 continueRoutine = False
         
@@ -647,17 +684,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 thisExp=thisExp, 
                 win=win, 
                 timers=[routineTimer, globalClock], 
-                currentRoutine=SAM,
+                currentRoutine=SAM_1,
             )
             # skip the frame we paused on
             continue
         
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
-            SAM.forceEnded = routineForceEnded = True
+            SAM_1.forceEnded = routineForceEnded = True
             break
         continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in SAM.components:
+        for thisComponent in SAM_1.components:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
@@ -666,23 +703,305 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    # --- Ending Routine "SAM" ---
-    for thisComponent in SAM.components:
+    # --- Ending Routine "SAM_1" ---
+    for thisComponent in SAM_1.components:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # store stop times for SAM
-    SAM.tStop = globalClock.getTime(format='float')
-    SAM.tStopRefresh = tThisFlipGlobal
-    thisExp.addData('SAM.stopped', SAM.tStop)
+    # store stop times for SAM_1
+    SAM_1.tStop = globalClock.getTime(format='float')
+    SAM_1.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('SAM_1.stopped', SAM_1.tStop)
     # check responses
-    if rating.keys in ['', [], None]:  # No response was made
-        rating.keys = None
-    thisExp.addData('rating.keys',rating.keys)
-    if rating.keys != None:  # we had a response
-        thisExp.addData('rating.rt', rating.rt)
-        thisExp.addData('rating.duration', rating.duration)
+    if rating_sam_1.keys in ['', [], None]:  # No response was made
+        rating_sam_1.keys = None
+    thisExp.addData('rating_sam_1.keys',rating_sam_1.keys)
+    if rating_sam_1.keys != None:  # we had a response
+        thisExp.addData('rating_sam_1.rt', rating_sam_1.rt)
+        thisExp.addData('rating_sam_1.duration', rating_sam_1.duration)
     thisExp.nextEntry()
-    # the Routine "SAM" was not non-slip safe, so reset the non-slip timer
+    # the Routine "SAM_1" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
+    
+    # --- Prepare to start Routine "SAM_2" ---
+    # create an object to store info about Routine SAM_2
+    SAM_2 = data.Routine(
+        name='SAM_2',
+        components=[question_sam_2, rating_sam_2],
+    )
+    SAM_2.status = NOT_STARTED
+    continueRoutine = True
+    # update component parameters for each repeat
+    # create starting attributes for rating_sam_2
+    rating_sam_2.keys = []
+    rating_sam_2.rt = []
+    _rating_sam_2_allKeys = []
+    # store start times for SAM_2
+    SAM_2.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    SAM_2.tStart = globalClock.getTime(format='float')
+    SAM_2.status = STARTED
+    thisExp.addData('SAM_2.started', SAM_2.tStart)
+    SAM_2.maxDuration = None
+    # keep track of which components have finished
+    SAM_2Components = SAM_2.components
+    for thisComponent in SAM_2.components:
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    frameN = -1
+    
+    # --- Run Routine "SAM_2" ---
+    SAM_2.forceEnded = routineForceEnded = not continueRoutine
+    while continueRoutine:
+        # get current time
+        t = routineTimer.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *question_sam_2* updates
+        
+        # if question_sam_2 is starting this frame...
+        if question_sam_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            question_sam_2.frameNStart = frameN  # exact frame index
+            question_sam_2.tStart = t  # local t and not account for scr refresh
+            question_sam_2.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(question_sam_2, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'question_sam_2.started')
+            # update status
+            question_sam_2.status = STARTED
+            question_sam_2.setAutoDraw(True)
+        
+        # if question_sam_2 is active this frame...
+        if question_sam_2.status == STARTED:
+            # update params
+            pass
+        
+        # *rating_sam_2* updates
+        waitOnFlip = False
+        
+        # if rating_sam_2 is starting this frame...
+        if rating_sam_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            rating_sam_2.frameNStart = frameN  # exact frame index
+            rating_sam_2.tStart = t  # local t and not account for scr refresh
+            rating_sam_2.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(rating_sam_2, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'rating_sam_2.started')
+            # update status
+            rating_sam_2.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(rating_sam_2.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(rating_sam_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if rating_sam_2.status == STARTED and not waitOnFlip:
+            theseKeys = rating_sam_2.getKeys(keyList=['1','2','3','4','5','6','7','8','9'], ignoreKeys=["escape"], waitRelease=False)
+            _rating_sam_2_allKeys.extend(theseKeys)
+            if len(_rating_sam_2_allKeys):
+                rating_sam_2.keys = _rating_sam_2_allKeys[-1].name  # just the last key pressed
+                rating_sam_2.rt = _rating_sam_2_allKeys[-1].rt
+                rating_sam_2.duration = _rating_sam_2_allKeys[-1].duration
+                # a response ends the routine
+                continueRoutine = False
+        
+        # check for quit (typically the Esc key)
+        if defaultKeyboard.getKeys(keyList=["escape"]):
+            thisExp.status = FINISHED
+        if thisExp.status == FINISHED or endExpNow:
+            endExperiment(thisExp, win=win)
+            return
+        # pause experiment here if requested
+        if thisExp.status == PAUSED:
+            pauseExperiment(
+                thisExp=thisExp, 
+                win=win, 
+                timers=[routineTimer, globalClock], 
+                currentRoutine=SAM_2,
+            )
+            # skip the frame we paused on
+            continue
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            SAM_2.forceEnded = routineForceEnded = True
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in SAM_2.components:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # --- Ending Routine "SAM_2" ---
+    for thisComponent in SAM_2.components:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    # store stop times for SAM_2
+    SAM_2.tStop = globalClock.getTime(format='float')
+    SAM_2.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('SAM_2.stopped', SAM_2.tStop)
+    # check responses
+    if rating_sam_2.keys in ['', [], None]:  # No response was made
+        rating_sam_2.keys = None
+    thisExp.addData('rating_sam_2.keys',rating_sam_2.keys)
+    if rating_sam_2.keys != None:  # we had a response
+        thisExp.addData('rating_sam_2.rt', rating_sam_2.rt)
+        thisExp.addData('rating_sam_2.duration', rating_sam_2.duration)
+    thisExp.nextEntry()
+    # the Routine "SAM_2" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
+    
+    # --- Prepare to start Routine "SAM_3" ---
+    # create an object to store info about Routine SAM_3
+    SAM_3 = data.Routine(
+        name='SAM_3',
+        components=[question_sam_3, rating_sam_3],
+    )
+    SAM_3.status = NOT_STARTED
+    continueRoutine = True
+    # update component parameters for each repeat
+    # create starting attributes for rating_sam_3
+    rating_sam_3.keys = []
+    rating_sam_3.rt = []
+    _rating_sam_3_allKeys = []
+    # store start times for SAM_3
+    SAM_3.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    SAM_3.tStart = globalClock.getTime(format='float')
+    SAM_3.status = STARTED
+    thisExp.addData('SAM_3.started', SAM_3.tStart)
+    SAM_3.maxDuration = None
+    # keep track of which components have finished
+    SAM_3Components = SAM_3.components
+    for thisComponent in SAM_3.components:
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    frameN = -1
+    
+    # --- Run Routine "SAM_3" ---
+    SAM_3.forceEnded = routineForceEnded = not continueRoutine
+    while continueRoutine:
+        # get current time
+        t = routineTimer.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *question_sam_3* updates
+        
+        # if question_sam_3 is starting this frame...
+        if question_sam_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            question_sam_3.frameNStart = frameN  # exact frame index
+            question_sam_3.tStart = t  # local t and not account for scr refresh
+            question_sam_3.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(question_sam_3, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'question_sam_3.started')
+            # update status
+            question_sam_3.status = STARTED
+            question_sam_3.setAutoDraw(True)
+        
+        # if question_sam_3 is active this frame...
+        if question_sam_3.status == STARTED:
+            # update params
+            pass
+        
+        # *rating_sam_3* updates
+        waitOnFlip = False
+        
+        # if rating_sam_3 is starting this frame...
+        if rating_sam_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            rating_sam_3.frameNStart = frameN  # exact frame index
+            rating_sam_3.tStart = t  # local t and not account for scr refresh
+            rating_sam_3.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(rating_sam_3, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'rating_sam_3.started')
+            # update status
+            rating_sam_3.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(rating_sam_3.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(rating_sam_3.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if rating_sam_3.status == STARTED and not waitOnFlip:
+            theseKeys = rating_sam_3.getKeys(keyList=['1','2','3','4','5','6','7','8','9'], ignoreKeys=["escape"], waitRelease=False)
+            _rating_sam_3_allKeys.extend(theseKeys)
+            if len(_rating_sam_3_allKeys):
+                rating_sam_3.keys = _rating_sam_3_allKeys[-1].name  # just the last key pressed
+                rating_sam_3.rt = _rating_sam_3_allKeys[-1].rt
+                rating_sam_3.duration = _rating_sam_3_allKeys[-1].duration
+                # a response ends the routine
+                continueRoutine = False
+        
+        # check for quit (typically the Esc key)
+        if defaultKeyboard.getKeys(keyList=["escape"]):
+            thisExp.status = FINISHED
+        if thisExp.status == FINISHED or endExpNow:
+            endExperiment(thisExp, win=win)
+            return
+        # pause experiment here if requested
+        if thisExp.status == PAUSED:
+            pauseExperiment(
+                thisExp=thisExp, 
+                win=win, 
+                timers=[routineTimer, globalClock], 
+                currentRoutine=SAM_3,
+            )
+            # skip the frame we paused on
+            continue
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            SAM_3.forceEnded = routineForceEnded = True
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in SAM_3.components:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # --- Ending Routine "SAM_3" ---
+    for thisComponent in SAM_3.components:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    # store stop times for SAM_3
+    SAM_3.tStop = globalClock.getTime(format='float')
+    SAM_3.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('SAM_3.stopped', SAM_3.tStop)
+    # check responses
+    if rating_sam_3.keys in ['', [], None]:  # No response was made
+        rating_sam_3.keys = None
+    thisExp.addData('rating_sam_3.keys',rating_sam_3.keys)
+    if rating_sam_3.keys != None:  # we had a response
+        thisExp.addData('rating_sam_3.rt', rating_sam_3.rt)
+        thisExp.addData('rating_sam_3.duration', rating_sam_3.duration)
+    thisExp.nextEntry()
+    # the Routine "SAM_3" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
     # mark experiment as finished
