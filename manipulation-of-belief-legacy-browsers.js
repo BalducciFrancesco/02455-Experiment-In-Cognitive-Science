@@ -39,18 +39,15 @@ psychoJS.scheduleCondition(function() { return (psychoJS.gui.dialogComponent.but
 // flowScheduler gets run if the participants presses OK
 flowScheduler.add(updateInfo); // add timeStamp
 flowScheduler.add(experimentInit);
-flowScheduler.add(videoRoutineBegin());
-flowScheduler.add(videoRoutineEachFrame());
-flowScheduler.add(videoRoutineEnd());
-flowScheduler.add(SAM_1RoutineBegin());
-flowScheduler.add(SAM_1RoutineEachFrame());
-flowScheduler.add(SAM_1RoutineEnd());
-flowScheduler.add(SAM_2RoutineBegin());
-flowScheduler.add(SAM_2RoutineEachFrame());
-flowScheduler.add(SAM_2RoutineEnd());
-flowScheduler.add(SAM_3RoutineBegin());
-flowScheduler.add(SAM_3RoutineEachFrame());
-flowScheduler.add(SAM_3RoutineEnd());
+const trialsLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(trialsLoopBegin(trialsLoopScheduler));
+flowScheduler.add(trialsLoopScheduler);
+flowScheduler.add(trialsLoopEnd);
+
+
+
+
+
 flowScheduler.add(quitPsychoJS, 'Thank you for your patience.', true);
 
 // quit if user presses Cancel in dialog box:
@@ -61,7 +58,7 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
     // resources:
-    {'name': 'stimuli/18840567-hd_1920_1080_30fps.mp4', 'path': 'stimuli/18840567-hd_1920_1080_30fps.mp4'},
+    {'name': 'variables/subjects_design.csv', 'path': 'variables/subjects_design.csv'},
     {'name': 'stimuli/sam-1.png', 'path': 'stimuli/sam-1.png'},
     {'name': 'stimuli/sam-2.png', 'path': 'stimuli/sam-2.png'},
     {'name': 'stimuli/sam-3.png', 'path': 'stimuli/sam-3.png'},
@@ -104,6 +101,7 @@ async function updateInfo() {
 var videoClock;
 var video1Clock;
 var video1;
+var text;
 var SAM_1Clock;
 var question_sam_1;
 var rating_sam_1;
@@ -118,6 +116,8 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "video"
   videoClock = new util.Clock();
+  // Run 'Begin Experiment' code from load_design
+  /* Syntax Error: Fix Python code */
   video1Clock = new util.Clock();
   video1 = new visual.MovieStim({
     win: psychoJS.window,
@@ -131,8 +131,20 @@ async function experimentInit() {
     opacity: null,
     loop: false,
     noAudio: false,
-    depth: 0
+    depth: -1
   })
+  text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'text',
+    text: '',
+    font: 'Arial',
+    units: undefined, 
+    pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -2.0 
+  });
+  
   // Initialize components for Routine "SAM_1"
   SAM_1Clock = new util.Clock();
   question_sam_1 = new visual.ImageStim({
@@ -192,6 +204,79 @@ async function experimentInit() {
 }
 
 
+var trials;
+function trialsLoopBegin(trialsLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    trials = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 4, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: 'variables/subjects_design.csv',
+      seed: undefined, name: 'trials'
+    });
+    psychoJS.experiment.addLoop(trials); // add the loop to the experiment
+    currentLoop = trials;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    trials.forEach(function() {
+      snapshot = trials.getSnapshot();
+    
+      trialsLoopScheduler.add(importConditions(snapshot));
+      trialsLoopScheduler.add(videoRoutineBegin(snapshot));
+      trialsLoopScheduler.add(videoRoutineEachFrame());
+      trialsLoopScheduler.add(videoRoutineEnd(snapshot));
+      trialsLoopScheduler.add(SAM_1RoutineBegin(snapshot));
+      trialsLoopScheduler.add(SAM_1RoutineEachFrame());
+      trialsLoopScheduler.add(SAM_1RoutineEnd(snapshot));
+      trialsLoopScheduler.add(SAM_2RoutineBegin(snapshot));
+      trialsLoopScheduler.add(SAM_2RoutineEachFrame());
+      trialsLoopScheduler.add(SAM_2RoutineEnd(snapshot));
+      trialsLoopScheduler.add(SAM_3RoutineBegin(snapshot));
+      trialsLoopScheduler.add(SAM_3RoutineEachFrame());
+      trialsLoopScheduler.add(SAM_3RoutineEnd(snapshot));
+      trialsLoopScheduler.add(trialsLoopEndIteration(trialsLoopScheduler, snapshot));
+    });
+    
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+async function trialsLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(trials);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+
+function trialsLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      } else {
+        psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
 var t;
 var frameN;
 var continueRoutine;
@@ -213,12 +298,14 @@ function videoRoutineBegin(snapshot) {
     routineTimer.add(3.000000);
     videoMaxDurationReached = false;
     // update component parameters for each repeat
-    video1.setMovie('stimuli/18840567-hd_1920_1080_30fps.mp4');
+    video1.setMovie(videoFileName);
+    text.setText(label);
     psychoJS.experiment.addData('video.started', globalClock.getTime());
     videoMaxDuration = null
     // keep track of which components have finished
     videoComponents = [];
     videoComponents.push(video1);
+    videoComponents.push(text);
     
     videoComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -261,6 +348,31 @@ function videoRoutineEachFrame() {
     if (video1.status === PsychoJS.Status.FINISHED) {  // force-end the Routine
         continueRoutine = false;
     }
+    
+    // *text* updates
+    if (t >= 0.0 && text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      text.tStart = t;  // (not accounting for frame time here)
+      text.frameNStart = frameN;  // exact frame index
+      
+      text.setAutoDraw(true);
+    }
+    
+    
+    // if text is active this frame...
+    if (text.status === PsychoJS.Status.STARTED) {
+    }
+    
+    frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
+    if (text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      // keep track of stop time/frame for later
+      text.tStop = t;  // not accounting for scr refresh
+      text.frameNStop = frameN;  // exact frame index
+      // update status
+      text.status = PsychoJS.Status.FINISHED;
+      text.setAutoDraw(false);
+    }
+    
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);

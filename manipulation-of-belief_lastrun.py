@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Tue Oct 28 21:46:05 2025
+    on Wed Oct 29 14:49:58 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -389,14 +389,33 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # Start Code - component code to be run after the window creation
     
     # --- Initialize components for Routine "video" ---
+    # Run 'Begin Experiment' code from load_design
+    import csv
+    
+    stimuli_design = []
+    with open('variables/subjects_design.csv', 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            stimuli_design.append(row)
+    
+    subj_num = int(expInfo['participant'])
+    selected_order = stimuli_design[subj_num]
+    print(f"Subject {subj_num} - selected order: {selected_order}")
     video1 = visual.MovieStim(
         win, name='video1',
         filename=None, movieLib='ffpyplayer',
         loop=False, volume=1.0, noAudio=False,
         pos=(0, 0), size=(0.5, 0.5), units=win.units,
         ori=0.0, anchor='center',opacity=None, contrast=1.0,
-        depth=0
+        depth=-1
     )
+    text = visual.TextStim(win=win, name='text',
+        text='',
+        font='Arial',
+        pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=-2.0);
     
     # --- Initialize components for Routine "SAM_1" ---
     question_sam_1 = visual.ImageStim(
@@ -460,49 +479,53 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     )
     
     # set up handler to look after randomisation of conditions etc
-    trials = data.TrialHandler2(
-        name='trials',
-        nReps=4.0, 
-        method='random', 
+    stimuli = data.TrialHandler2(
+        name='stimuli',
+        nReps=1.0, 
+        method='sequential', 
         extraInfo=expInfo, 
         originPath=-1, 
-        trialList=data.importConditions('variables/subjects_design.csv'), 
+        trialList=data.importConditions('variables/stimuli.csv'), 
         seed=None, 
     )
-    thisExp.addLoop(trials)  # add the loop to the experiment
-    thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
-    # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
-    if thisTrial != None:
-        for paramName in thisTrial:
-            globals()[paramName] = thisTrial[paramName]
+    thisExp.addLoop(stimuli)  # add the loop to the experiment
+    thisStimulus = stimuli.trialList[0]  # so we can initialise stimuli with some values
+    # abbreviate parameter names if possible (e.g. rgb = thisStimulus.rgb)
+    if thisStimulus != None:
+        for paramName in thisStimulus:
+            globals()[paramName] = thisStimulus[paramName]
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
         thisSession.sendExperimentData()
     
-    for thisTrial in trials:
-        trials.status = STARTED
-        if hasattr(thisTrial, 'status'):
-            thisTrial.status = STARTED
-        currentLoop = trials
+    for thisStimulus in stimuli:
+        stimuli.status = STARTED
+        if hasattr(thisStimulus, 'status'):
+            thisStimulus.status = STARTED
+        currentLoop = stimuli
         thisExp.timestampOnFlip(win, 'thisRow.t', format=globalClock.format)
         if thisSession is not None:
             # if running in a Session with a Liaison client, send data up to now
             thisSession.sendExperimentData()
-        # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
-        if thisTrial != None:
-            for paramName in thisTrial:
-                globals()[paramName] = thisTrial[paramName]
+        # abbreviate parameter names if possible (e.g. rgb = thisStimulus.rgb)
+        if thisStimulus != None:
+            for paramName in thisStimulus:
+                globals()[paramName] = thisStimulus[paramName]
         
         # --- Prepare to start Routine "video" ---
         # create an object to store info about Routine video
         video = data.Routine(
             name='video',
-            components=[video1],
+            components=[video1, text],
         )
         video.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
-        video1.setMovie(videoFileName)
+        # Run 'Begin Routine' code from load_design
+        video_file = 'stimuli/' + selected_order[f'video{video_index}']
+        label_text = selected_order[f'label{video_index}']
+        video1.setMovie(video_file)
+        text.setText(label_text)
         # store start times for video
         video.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         video.tStart = globalClock.getTime(format='float')
@@ -527,7 +550,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         video.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine and routineTimer.getTime() < 3.0:
             # if trial has changed, end Routine now
-            if hasattr(thisTrial, 'status') and thisTrial.status == STOPPING:
+            if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
                 continueRoutine = False
             # get current time
             t = routineTimer.getTime()
@@ -568,6 +591,40 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     video1.stop()
             if video1.isFinished:  # force-end the Routine
                 continueRoutine = False
+            
+            # *text* updates
+            
+            # if text is starting this frame...
+            if text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                text.frameNStart = frameN  # exact frame index
+                text.tStart = t  # local t and not account for scr refresh
+                text.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'text.started')
+                # update status
+                text.status = STARTED
+                text.setAutoDraw(True)
+            
+            # if text is active this frame...
+            if text.status == STARTED:
+                # update params
+                pass
+            
+            # if text is stopping this frame...
+            if text.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > text.tStartRefresh + 3-frameTolerance:
+                    # keep track of stop time/frame for later
+                    text.tStop = t  # not accounting for scr refresh
+                    text.tStopRefresh = tThisFlipGlobal  # on global time
+                    text.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'text.stopped')
+                    # update status
+                    text.status = FINISHED
+                    text.setAutoDraw(False)
             
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -654,7 +711,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         SAM_1.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
-            if hasattr(thisTrial, 'status') and thisTrial.status == STOPPING:
+            if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
                 continueRoutine = False
             # get current time
             t = routineTimer.getTime()
@@ -753,10 +810,10 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # check responses
         if rating_sam_1.keys in ['', [], None]:  # No response was made
             rating_sam_1.keys = None
-        trials.addData('rating_sam_1.keys',rating_sam_1.keys)
+        stimuli.addData('rating_sam_1.keys',rating_sam_1.keys)
         if rating_sam_1.keys != None:  # we had a response
-            trials.addData('rating_sam_1.rt', rating_sam_1.rt)
-            trials.addData('rating_sam_1.duration', rating_sam_1.duration)
+            stimuli.addData('rating_sam_1.rt', rating_sam_1.rt)
+            stimuli.addData('rating_sam_1.duration', rating_sam_1.duration)
         # the Routine "SAM_1" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
@@ -797,7 +854,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         SAM_2.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
-            if hasattr(thisTrial, 'status') and thisTrial.status == STOPPING:
+            if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
                 continueRoutine = False
             # get current time
             t = routineTimer.getTime()
@@ -896,10 +953,10 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # check responses
         if rating_sam_2.keys in ['', [], None]:  # No response was made
             rating_sam_2.keys = None
-        trials.addData('rating_sam_2.keys',rating_sam_2.keys)
+        stimuli.addData('rating_sam_2.keys',rating_sam_2.keys)
         if rating_sam_2.keys != None:  # we had a response
-            trials.addData('rating_sam_2.rt', rating_sam_2.rt)
-            trials.addData('rating_sam_2.duration', rating_sam_2.duration)
+            stimuli.addData('rating_sam_2.rt', rating_sam_2.rt)
+            stimuli.addData('rating_sam_2.duration', rating_sam_2.duration)
         # the Routine "SAM_2" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
@@ -940,7 +997,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         SAM_3.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
-            if hasattr(thisTrial, 'status') and thisTrial.status == STOPPING:
+            if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
                 continueRoutine = False
             # get current time
             t = routineTimer.getTime()
@@ -1039,17 +1096,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # check responses
         if rating_sam_3.keys in ['', [], None]:  # No response was made
             rating_sam_3.keys = None
-        trials.addData('rating_sam_3.keys',rating_sam_3.keys)
+        stimuli.addData('rating_sam_3.keys',rating_sam_3.keys)
         if rating_sam_3.keys != None:  # we had a response
-            trials.addData('rating_sam_3.rt', rating_sam_3.rt)
-            trials.addData('rating_sam_3.duration', rating_sam_3.duration)
+            stimuli.addData('rating_sam_3.rt', rating_sam_3.rt)
+            stimuli.addData('rating_sam_3.duration', rating_sam_3.duration)
         # the Routine "SAM_3" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
-        # mark thisTrial as finished
-        if hasattr(thisTrial, 'status'):
-            thisTrial.status = FINISHED
+        # mark thisStimulus as finished
+        if hasattr(thisStimulus, 'status'):
+            thisStimulus.status = FINISHED
         # if awaiting a pause, pause now
-        if trials.status == PAUSED:
+        if stimuli.status == PAUSED:
             thisExp.status = PAUSED
             pauseExperiment(
                 thisExp=thisExp, 
@@ -1057,11 +1114,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 timers=[globalClock], 
             )
             # once done pausing, restore running status
-            trials.status = STARTED
+            stimuli.status = STARTED
         thisExp.nextEntry()
         
-    # completed 4.0 repeats of 'trials'
-    trials.status = FINISHED
+    # completed 1.0 repeats of 'stimuli'
+    stimuli.status = FINISHED
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
