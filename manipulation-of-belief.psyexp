@@ -235,14 +235,14 @@
       <CodeComponent name="load_design" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="import csv&amp;#10;&amp;#10;stimuli_design = []&amp;#10;with open('variables/subjects_design.csv', 'r') as csvfile:&amp;#10;    reader = csv.DictReader(csvfile)&amp;#10;    for row in reader:&amp;#10;        stimuli_design.append(row)&amp;#10;&amp;#10;subj_num = int(expInfo['participant'])&amp;#10;selected_order = stimuli_design[subj_num]&amp;#10;print(f&quot;Subject {subj_num} - selected order: {selected_order}&quot;)" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="import csv&amp;#10;import time&amp;#10;&amp;#10;stimuli_design = []&amp;#10;with open('variables/subjects_design.csv', 'r') as csvfile:&amp;#10;    reader = csv.DictReader(csvfile)&amp;#10;    for row in reader:&amp;#10;        stimuli_design.append(row)&amp;#10;&amp;#10;subj_num = int(expInfo['participant'])&amp;#10;selected_order = stimuli_design[subj_num]&amp;#10;print(f&quot;Subject {subj_num} - selected order: {selected_order}&quot;)&amp;#10;&amp;#10;thisExp.addData('expStartTime', time.time())" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="video_file = 'stimuli/' + selected_order[f'video{video_index}']&amp;#10;label_text = selected_order[f'label{video_index}']" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="video_file = 'stimuli/' + selected_order[f'video{video_index}']&amp;#10;label_text = selected_order[f'label{video_index}']&amp;#10;&amp;#10;stimuli.addData('video_id', video_index)&amp;#10;stimuli.addData('belief', selected_order[f'label{video_index}'])" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="thisExp.addData('expEndTime', time.time())" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
@@ -930,6 +930,5 @@
     <Routine name="r_focus_questionnaire"/>
     <LoopTerminator name="stimuli"/>
     <Routine name="r_final_questionnaire"/>
-    <Routine name="r_bck_form"/>
   </Flow>
 </PsychoPy2experiment>

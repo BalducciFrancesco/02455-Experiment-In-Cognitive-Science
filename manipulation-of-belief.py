@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov  5 15:07:00 2025
+    on Wed Nov  5 15:22:07 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -421,6 +421,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # --- Initialize components for Routine "r_preparation" ---
     # Run 'Begin Experiment' code from load_design
     import csv
+    import time
     
     stimuli_design = []
     with open('variables/subjects_design.csv', 'r') as csvfile:
@@ -431,6 +432,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     subj_num = int(expInfo['participant'])
     selected_order = stimuli_design[subj_num]
     print(f"Subject {subj_num} - selected order: {selected_order}")
+    
+    thisExp.addData('expStartTime', time.time())
     video_nature_cue_text = visual.TextStim(win=win, name='video_nature_cue_text',
         text='',
         font='Arial',
@@ -541,22 +544,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
         font='Noto Sans', labelHeight=0.05,
         flip=False, ori=0.0, depth=-1, readOnly=False)
-    
-    # --- Initialize components for Routine "r_bck_form" ---
-    win.allowStencil = True
-    final_questionnaire_form_2 = visual.Form(win=win, name='final_questionnaire_form_2',
-        items='variables/final_questionnaire_form.xlsx',
-        textHeight=0.02,
-        font='Arial',
-        randomize=False,
-        style='dark',
-        fillColor=None, borderColor=None, itemColor='white', 
-        responseColor='white', markerColor='red', colorSpace='rgb', 
-        size=(1.0,1.0),
-        pos=(0, 0),
-        itemPadding=0.03,
-        depth=0
-    )
     
     # create some handy timers
     
@@ -888,6 +875,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # Run 'Begin Routine' code from load_design
         video_file = 'stimuli/' + selected_order[f'video{video_index}']
         label_text = selected_order[f'label{video_index}']
+        
+        stimuli.addData('video_id', video_index)
+        stimuli.addData('belief', selected_order[f'label{video_index}'])
         # store start times for r_preparation
         r_preparation.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         r_preparation.tStart = globalClock.getTime(format='float')
@@ -1915,110 +1905,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     thisExp.nextEntry()
     # the Routine "r_final_questionnaire" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
-    
-    # --- Prepare to start Routine "r_bck_form" ---
-    # create an object to store info about Routine r_bck_form
-    r_bck_form = data.Routine(
-        name='r_bck_form',
-        components=[final_questionnaire_form_2],
-    )
-    r_bck_form.status = NOT_STARTED
-    continueRoutine = True
-    # update component parameters for each repeat
-    # store start times for r_bck_form
-    r_bck_form.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-    r_bck_form.tStart = globalClock.getTime(format='float')
-    r_bck_form.status = STARTED
-    thisExp.addData('r_bck_form.started', r_bck_form.tStart)
-    r_bck_form.maxDuration = None
-    # keep track of which components have finished
-    r_bck_formComponents = r_bck_form.components
-    for thisComponent in r_bck_form.components:
-        thisComponent.tStart = None
-        thisComponent.tStop = None
-        thisComponent.tStartRefresh = None
-        thisComponent.tStopRefresh = None
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    # reset timers
-    t = 0
-    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-    frameN = -1
-    
-    # --- Run Routine "r_bck_form" ---
-    r_bck_form.forceEnded = routineForceEnded = not continueRoutine
-    while continueRoutine:
-        # get current time
-        t = routineTimer.getTime()
-        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
-        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
-        
-        # *final_questionnaire_form_2* updates
-        
-        # if final_questionnaire_form_2 is starting this frame...
-        if final_questionnaire_form_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            final_questionnaire_form_2.frameNStart = frameN  # exact frame index
-            final_questionnaire_form_2.tStart = t  # local t and not account for scr refresh
-            final_questionnaire_form_2.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(final_questionnaire_form_2, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'final_questionnaire_form_2.started')
-            # update status
-            final_questionnaire_form_2.status = STARTED
-            final_questionnaire_form_2.setAutoDraw(True)
-        
-        # if final_questionnaire_form_2 is active this frame...
-        if final_questionnaire_form_2.status == STARTED:
-            # update params
-            pass
-        
-        # check for quit (typically the Esc key)
-        if defaultKeyboard.getKeys(keyList=["escape"]):
-            thisExp.status = FINISHED
-        if thisExp.status == FINISHED or endExpNow:
-            endExperiment(thisExp, win=win)
-            return
-        # pause experiment here if requested
-        if thisExp.status == PAUSED:
-            pauseExperiment(
-                thisExp=thisExp, 
-                win=win, 
-                timers=[routineTimer, globalClock], 
-                currentRoutine=r_bck_form,
-            )
-            # skip the frame we paused on
-            continue
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            r_bck_form.forceEnded = routineForceEnded = True
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in r_bck_form.components:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-    
-    # --- Ending Routine "r_bck_form" ---
-    for thisComponent in r_bck_form.components:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    # store stop times for r_bck_form
-    r_bck_form.tStop = globalClock.getTime(format='float')
-    r_bck_form.tStopRefresh = tThisFlipGlobal
-    thisExp.addData('r_bck_form.stopped', r_bck_form.tStop)
-    final_questionnaire_form_2.addDataToExp(thisExp, 'rows')
-    final_questionnaire_form_2.autodraw = False
-    thisExp.nextEntry()
-    # the Routine "r_bck_form" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
+    # Run 'End Experiment' code from load_design
+    thisExp.addData('expEndTime', time.time())
     
     # mark experiment as finished
     endExperiment(thisExp, win=win)
