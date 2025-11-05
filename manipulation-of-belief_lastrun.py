@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov  5 16:21:14 2025
+    on Wed Nov  5 16:28:27 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -439,7 +439,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     print(f"Subject {subj_num} - selected order: {selected_order}")
     
     thisExp.addData('expStartTime', time.time())
-    
     video_nature_cue_text = visual.TextStim(win=win, name='video_nature_cue_text',
         text='',
         font='Arial',
@@ -879,7 +878,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         continueRoutine = True
         # update component parameters for each repeat
         # Run 'Begin Routine' code from load_design
-        video_file = 'stimuli/' + selected_order[f'video{video_index}']
+        video_file = os.path.join(base_dir, 'stimuli', selected_order[f'video{video_index}'])
         label_text = selected_order[f'label{video_index}']
         
         stimuli.addData('video_id', video_index)
