@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov  5 15:22:07 2025
+    on Wed Nov  5 16:21:08 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -423,17 +423,23 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     import csv
     import time
     
+    base_dir = os.path.dirname(__file__)
+    
+    csv_path = os.path.join(base_dir, 'variables', 'subjects_design.csv')
+    
     stimuli_design = []
-    with open('variables/subjects_design.csv', 'r') as csvfile:
+    with open(csv_path, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             stimuli_design.append(row)
     
     subj_num = int(expInfo['participant'])
     selected_order = stimuli_design[subj_num]
+    
     print(f"Subject {subj_num} - selected order: {selected_order}")
     
     thisExp.addData('expStartTime', time.time())
+    
     video_nature_cue_text = visual.TextStim(win=win, name='video_nature_cue_text',
         text='',
         font='Arial',
@@ -1133,11 +1139,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         for thisComponent in r_video.components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        video.stop()  # ensure movie has stopped at end of Routine
         # store stop times for r_video
         r_video.tStop = globalClock.getTime(format='float')
         r_video.tStopRefresh = tThisFlipGlobal
         thisExp.addData('r_video.stopped', r_video.tStop)
+        video.stop()  # ensure movie has stopped at end of Routine
         # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
         if r_video.maxDurationReached:
             routineTimer.addTime(-r_video.maxDuration)
