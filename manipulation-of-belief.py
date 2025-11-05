@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov  5 12:10:37 2025
+    on Wed Nov  5 13:56:09 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -403,7 +403,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "instructions" ---
     text_norm = visual.TextStim(win=win, name='text_norm',
-        text='Any text\n\nincluding line breaks\n\nThis text component is white, so change the colour if you have a white background. It does not save the onset and offset time, but has been left justified with a wrap width of 1.8 norm units.\n\nPress the spacebar to continue',
+        text="You’ll watch four short, content-friendly videos where each one has a label that either says “AI-generated” or “human-generated”.\n\nAfter each video, you’ll fill out a short questionnaire about your experience with this video.\n \nYou can stop and withdraw at any time if you feel uncomfortable or simply don’t want to continue.\n\nPress SPACE when you're ready.",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -429,7 +429,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     subj_num = int(expInfo['participant'])
     selected_order = stimuli_design[subj_num]
     print(f"Subject {subj_num} - selected order: {selected_order}")
-    video_nature_type = visual.TextStim(win=win, name='video_nature_type',
+    video_nature_cue_text = visual.TextStim(win=win, name='video_nature_cue_text',
         text='',
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
@@ -456,6 +456,13 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     skip_video = keyboard.Keyboard(deviceName='skip_video')
     
     # --- Initialize components for Routine "SAM_1" ---
+    question_sam_1_text = visual.TextStim(win=win, name='question_sam_1_text',
+        text='Press a button 1-5 to express how the last video made you feel about being \nunhappy / happy\n\n(1 = very unhappy, 5 = very happy)',
+        font='Arial',
+        units='norm', pos=(0, 0.5), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
     question_sam_1 = visual.ImageStim(
         win=win,
         name='question_sam_1', 
@@ -463,10 +470,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         ori=0.0, pos=(0, 0), draggable=False, size=None,
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
-        texRes=128.0, interpolate=True, depth=0.0)
+        texRes=128.0, interpolate=True, depth=-1.0)
     rating_sam_1 = keyboard.Keyboard(deviceName='rating_sam_1')
     
     # --- Initialize components for Routine "SAM_2" ---
+    question_sam_2_text = visual.TextStim(win=win, name='question_sam_2_text',
+        text='Press a button 1-5 to express how the last video made you feel about being \ncalm / excited\n\n(1 = very calm, 5 = very excited)',
+        font='Arial',
+        units='norm', pos=(0, 0.5), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
     question_sam_2 = visual.ImageStim(
         win=win,
         name='question_sam_2', 
@@ -474,10 +488,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         ori=0.0, pos=(0, 0), draggable=False, size=None,
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
-        texRes=128.0, interpolate=True, depth=0.0)
+        texRes=128.0, interpolate=True, depth=-1.0)
     rating_sam_2 = keyboard.Keyboard(deviceName='rating_sam_2')
     
     # --- Initialize components for Routine "SAM_3" ---
+    question_sam_3_text = visual.TextStim(win=win, name='question_sam_3_text',
+        text='Press a button 1-5 to express how the last video made you feel about being \ncontrolled / incontrolled\n\n(1 = very controlled, 5 = very incontrolled)',
+        font='Arial',
+        units='norm', pos=(0, 0.5), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
     question_sam_3 = visual.ImageStim(
         win=win,
         name='question_sam_3', 
@@ -485,7 +506,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         ori=0.0, pos=(0, 0), draggable=False, size=None,
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
-        texRes=128.0, interpolate=True, depth=0.0)
+        texRes=128.0, interpolate=True, depth=-1.0)
     rating_sam_3 = keyboard.Keyboard(deviceName='rating_sam_3')
     
     # --- Initialize components for Routine "questionnaire" ---
@@ -710,7 +731,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine preparation
         preparation = data.Routine(
             name='preparation',
-            components=[video_nature_type],
+            components=[video_nature_cue_text],
         )
         preparation.status = NOT_STARTED
         continueRoutine = True
@@ -751,35 +772,35 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
             
-            # *video_nature_type* updates
+            # *video_nature_cue_text* updates
             
-            # if video_nature_type is starting this frame...
-            if video_nature_type.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # if video_nature_cue_text is starting this frame...
+            if video_nature_cue_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                 # keep track of start time/frame for later
-                video_nature_type.frameNStart = frameN  # exact frame index
-                video_nature_type.tStart = t  # local t and not account for scr refresh
-                video_nature_type.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(video_nature_type, 'tStartRefresh')  # time at next scr refresh
+                video_nature_cue_text.frameNStart = frameN  # exact frame index
+                video_nature_cue_text.tStart = t  # local t and not account for scr refresh
+                video_nature_cue_text.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(video_nature_cue_text, 'tStartRefresh')  # time at next scr refresh
                 # update status
-                video_nature_type.status = STARTED
-                video_nature_type.setAutoDraw(True)
+                video_nature_cue_text.status = STARTED
+                video_nature_cue_text.setAutoDraw(True)
             
-            # if video_nature_type is active this frame...
-            if video_nature_type.status == STARTED:
+            # if video_nature_cue_text is active this frame...
+            if video_nature_cue_text.status == STARTED:
                 # update params
-                video_nature_type.setText("The next video is going to be " + str(label_text) + "\n" + str(5-int(t)), log=False)
+                video_nature_cue_text.setText("The next video is going to be " + "\n" + str(label_text) + "\n\n" + str(5-int(t)), log=False)
             
-            # if video_nature_type is stopping this frame...
-            if video_nature_type.status == STARTED:
+            # if video_nature_cue_text is stopping this frame...
+            if video_nature_cue_text.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > video_nature_type.tStartRefresh + 5-frameTolerance:
+                if tThisFlipGlobal > video_nature_cue_text.tStartRefresh + 5-frameTolerance:
                     # keep track of stop time/frame for later
-                    video_nature_type.tStop = t  # not accounting for scr refresh
-                    video_nature_type.tStopRefresh = tThisFlipGlobal  # on global time
-                    video_nature_type.frameNStop = frameN  # exact frame index
+                    video_nature_cue_text.tStop = t  # not accounting for scr refresh
+                    video_nature_cue_text.tStopRefresh = tThisFlipGlobal  # on global time
+                    video_nature_cue_text.frameNStop = frameN  # exact frame index
                     # update status
-                    video_nature_type.status = FINISHED
-                    video_nature_type.setAutoDraw(False)
+                    video_nature_cue_text.status = FINISHED
+                    video_nature_cue_text.setAutoDraw(False)
             
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -1009,7 +1030,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine SAM_1
         SAM_1 = data.Routine(
             name='SAM_1',
-            components=[question_sam_1, rating_sam_1],
+            components=[question_sam_1_text, question_sam_1, rating_sam_1],
         )
         SAM_1.status = NOT_STARTED
         continueRoutine = True
@@ -1050,6 +1071,24 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             tThisFlipGlobal = win.getFutureFlipTime(clock=None)
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
+            
+            # *question_sam_1_text* updates
+            
+            # if question_sam_1_text is starting this frame...
+            if question_sam_1_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                question_sam_1_text.frameNStart = frameN  # exact frame index
+                question_sam_1_text.tStart = t  # local t and not account for scr refresh
+                question_sam_1_text.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(question_sam_1_text, 'tStartRefresh')  # time at next scr refresh
+                # update status
+                question_sam_1_text.status = STARTED
+                question_sam_1_text.setAutoDraw(True)
+            
+            # if question_sam_1_text is active this frame...
+            if question_sam_1_text.status == STARTED:
+                # update params
+                pass
             
             # *question_sam_1* updates
             
@@ -1152,7 +1191,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine SAM_2
         SAM_2 = data.Routine(
             name='SAM_2',
-            components=[question_sam_2, rating_sam_2],
+            components=[question_sam_2_text, question_sam_2, rating_sam_2],
         )
         SAM_2.status = NOT_STARTED
         continueRoutine = True
@@ -1193,6 +1232,24 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             tThisFlipGlobal = win.getFutureFlipTime(clock=None)
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
+            
+            # *question_sam_2_text* updates
+            
+            # if question_sam_2_text is starting this frame...
+            if question_sam_2_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                question_sam_2_text.frameNStart = frameN  # exact frame index
+                question_sam_2_text.tStart = t  # local t and not account for scr refresh
+                question_sam_2_text.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(question_sam_2_text, 'tStartRefresh')  # time at next scr refresh
+                # update status
+                question_sam_2_text.status = STARTED
+                question_sam_2_text.setAutoDraw(True)
+            
+            # if question_sam_2_text is active this frame...
+            if question_sam_2_text.status == STARTED:
+                # update params
+                pass
             
             # *question_sam_2* updates
             
@@ -1295,7 +1352,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine SAM_3
         SAM_3 = data.Routine(
             name='SAM_3',
-            components=[question_sam_3, rating_sam_3],
+            components=[question_sam_3_text, question_sam_3, rating_sam_3],
         )
         SAM_3.status = NOT_STARTED
         continueRoutine = True
@@ -1336,6 +1393,24 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             tThisFlipGlobal = win.getFutureFlipTime(clock=None)
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
+            
+            # *question_sam_3_text* updates
+            
+            # if question_sam_3_text is starting this frame...
+            if question_sam_3_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                question_sam_3_text.frameNStart = frameN  # exact frame index
+                question_sam_3_text.tStart = t  # local t and not account for scr refresh
+                question_sam_3_text.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(question_sam_3_text, 'tStartRefresh')  # time at next scr refresh
+                # update status
+                question_sam_3_text.status = STARTED
+                question_sam_3_text.setAutoDraw(True)
+            
+            # if question_sam_3_text is active this frame...
+            if question_sam_3_text.status == STARTED:
+                # update params
+                pass
             
             # *question_sam_3* updates
             
