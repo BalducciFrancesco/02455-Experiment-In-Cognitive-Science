@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov  5 13:56:09 2025
+    on Wed Nov  5 14:58:07 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -201,7 +201,7 @@ def setupWindow(expInfo=None, win=None):
         # if not given a window to setup, make one
         win = visual.Window(
             size=_winSize, fullscr=_fullScr, screen=0,
-            winType='pyglet', allowGUI=False, allowStencil=False,
+            winType='pyglet', allowGUI=True, allowStencil=False,
             monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
             backgroundImage='', backgroundFit='none',
             blendMode='avg', useFBO=True,
@@ -287,12 +287,6 @@ def setupDevices(expInfo, thisExp, win):
         rating_sam_3 = deviceManager.addDevice(
             deviceClass='keyboard',
             deviceName='rating_sam_3',
-        )
-    if deviceManager.getDevice('questionnaire_done') is None:
-        # initialise questionnaire_done
-        questionnaire_done = deviceManager.addDevice(
-            deviceClass='keyboard',
-            deviceName='questionnaire_done',
         )
     # return True if completed successfully
     return True
@@ -401,7 +395,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # Start Code - component code to be run after the window creation
     
-    # --- Initialize components for Routine "instructions" ---
+    # --- Initialize components for Routine "r_instructions" ---
     text_norm = visual.TextStim(win=win, name='text_norm',
         text="You’ll watch four short, content-friendly videos where each one has a label that either says “AI-generated” or “human-generated”.\n\nAfter each video, you’ll fill out a short questionnaire about your experience with this video.\n \nYou can stop and withdraw at any time if you feel uncomfortable or simply don’t want to continue.\n\nPress SPACE when you're ready.",
         font='Arial',
@@ -416,7 +410,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # text component it refers to.
     text_norm.alignText= 'left'
     
-    # --- Initialize components for Routine "preparation" ---
+    # --- Initialize components for Routine "r_preparation" ---
     # Run 'Begin Experiment' code from load_design
     import csv
     
@@ -437,12 +431,12 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         languageStyle='LTR',
         depth=-1.0);
     
-    # --- Initialize components for Routine "video" ---
-    video_stimuli = visual.MovieStim(
-        win, name='video_stimuli',
+    # --- Initialize components for Routine "r_video" ---
+    video = visual.MovieStim(
+        win, name='video',
         filename=None, movieLib='ffpyplayer',
         loop=False, volume=1.0, noAudio=False,
-        pos=(0, 0), size=None, units=win.units,
+        pos=(0, 0), size=(2.0,2.0), units='norm',
         ori=0.0, anchor='center',opacity=None, contrast=1.0,
         depth=0
     )
@@ -455,7 +449,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         opacity=None, depth=-1.0, interpolate=True)
     skip_video = keyboard.Keyboard(deviceName='skip_video')
     
-    # --- Initialize components for Routine "SAM_1" ---
+    # --- Initialize components for Routine "r_SAM_1" ---
     question_sam_1_text = visual.TextStim(win=win, name='question_sam_1_text',
         text='Press a button 1-5 to express how the last video made you feel about being \nunhappy / happy\n\n(1 = very unhappy, 5 = very happy)',
         font='Arial',
@@ -473,7 +467,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         texRes=128.0, interpolate=True, depth=-1.0)
     rating_sam_1 = keyboard.Keyboard(deviceName='rating_sam_1')
     
-    # --- Initialize components for Routine "SAM_2" ---
+    # --- Initialize components for Routine "r_SAM_2" ---
     question_sam_2_text = visual.TextStim(win=win, name='question_sam_2_text',
         text='Press a button 1-5 to express how the last video made you feel about being \ncalm / excited\n\n(1 = very calm, 5 = very excited)',
         font='Arial',
@@ -491,7 +485,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         texRes=128.0, interpolate=True, depth=-1.0)
     rating_sam_2 = keyboard.Keyboard(deviceName='rating_sam_2')
     
-    # --- Initialize components for Routine "SAM_3" ---
+    # --- Initialize components for Routine "r_SAM_3" ---
     question_sam_3_text = visual.TextStim(win=win, name='question_sam_3_text',
         text='Press a button 1-5 to express how the last video made you feel about being \ncontrolled / incontrolled\n\n(1 = very controlled, 5 = very incontrolled)',
         font='Arial',
@@ -509,22 +503,53 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         texRes=128.0, interpolate=True, depth=-1.0)
     rating_sam_3 = keyboard.Keyboard(deviceName='rating_sam_3')
     
-    # --- Initialize components for Routine "questionnaire" ---
+    # --- Initialize components for Routine "r_focus_questionnaire" ---
+    focus_text = visual.TextStim(win=win, name='focus_text',
+        text='In general, how focused were you about what was happening on the screen when watching the previous video?',
+        font='Arial',
+        units='norm', pos=(0, 0.5), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
+    focus_slider = visual.Slider(win=win, name='focus_slider',
+        startValue=None, size=(1.0, 0.1), pos=(0, -0.4), units='norm',
+        labels=['Not focused at all','','','','Very focused'], ticks=(1, 2, 3, 4, 5), granularity=1.0,
+        style='rating', styleTweaks=(), opacity=None,
+        labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+        font='Noto Sans', labelHeight=0.05,
+        flip=False, ori=0.0, depth=-1, readOnly=False)
+    
+    # --- Initialize components for Routine "r_final_questionnaire" ---
+    opinion_text = visual.TextStim(win=win, name='opinion_text',
+        text='In general, what is your opinion on AI-generated visual contents (specifically AI-generated videos)?',
+        font='Arial',
+        units='norm', pos=(0, 0.5), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
+    opinion_slider = visual.Slider(win=win, name='opinion_slider',
+        startValue=None, size=(1.0, 0.1), pos=(0, -0.4), units='norm',
+        labels=['I don\'t like them','','','','I really like them'], ticks=(1, 2, 3, 4, 5), granularity=1.0,
+        style='rating', styleTweaks=(), opacity=None,
+        labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+        font='Noto Sans', labelHeight=0.05,
+        flip=False, ori=0.0, depth=-1, readOnly=False)
+    
+    # --- Initialize components for Routine "r_bck_form" ---
     win.allowStencil = True
-    questionnaire_form = visual.Form(win=win, name='questionnaire_form',
-        items='variables/questionnaire_form.xlsx',
-        textHeight=0.01,
+    final_questionnaire_form_2 = visual.Form(win=win, name='final_questionnaire_form_2',
+        items='variables/final_questionnaire_form.xlsx',
+        textHeight=0.02,
         font='Arial',
         randomize=False,
         style='dark',
         fillColor=None, borderColor=None, itemColor='white', 
         responseColor='white', markerColor='red', colorSpace='rgb', 
-        size=None,
+        size=(1.0,1.0),
         pos=(0, 0),
-        itemPadding=0.02,
+        itemPadding=0.03,
         depth=0
     )
-    questionnaire_done = keyboard.Keyboard(deviceName='questionnaire_done')
     
     # create some handy timers
     
@@ -554,28 +579,28 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         format='%Y-%m-%d %Hh%M.%S.%f %z', fractionalSecondDigits=6
     )
     
-    # --- Prepare to start Routine "instructions" ---
-    # create an object to store info about Routine instructions
-    instructions = data.Routine(
-        name='instructions',
+    # --- Prepare to start Routine "r_instructions" ---
+    # create an object to store info about Routine r_instructions
+    r_instructions = data.Routine(
+        name='r_instructions',
         components=[text_norm, key_instruct],
     )
-    instructions.status = NOT_STARTED
+    r_instructions.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
     # create starting attributes for key_instruct
     key_instruct.keys = []
     key_instruct.rt = []
     _key_instruct_allKeys = []
-    # store start times for instructions
-    instructions.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-    instructions.tStart = globalClock.getTime(format='float')
-    instructions.status = STARTED
-    thisExp.addData('instructions.started', instructions.tStart)
-    instructions.maxDuration = None
+    # store start times for r_instructions
+    r_instructions.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    r_instructions.tStart = globalClock.getTime(format='float')
+    r_instructions.status = STARTED
+    thisExp.addData('r_instructions.started', r_instructions.tStart)
+    r_instructions.maxDuration = None
     # keep track of which components have finished
-    instructionsComponents = instructions.components
-    for thisComponent in instructions.components:
+    r_instructionsComponents = r_instructions.components
+    for thisComponent in r_instructions.components:
         thisComponent.tStart = None
         thisComponent.tStop = None
         thisComponent.tStartRefresh = None
@@ -587,8 +612,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     _timeToFirstFrame = win.getFutureFlipTime(clock="now")
     frameN = -1
     
-    # --- Run Routine "instructions" ---
-    instructions.forceEnded = routineForceEnded = not continueRoutine
+    # --- Run Routine "r_instructions" ---
+    r_instructions.forceEnded = routineForceEnded = not continueRoutine
     while continueRoutine:
         # get current time
         t = routineTimer.getTime()
@@ -655,17 +680,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 thisExp=thisExp, 
                 win=win, 
                 timers=[routineTimer, globalClock], 
-                currentRoutine=instructions,
+                currentRoutine=r_instructions,
             )
             # skip the frame we paused on
             continue
         
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
-            instructions.forceEnded = routineForceEnded = True
+            r_instructions.forceEnded = routineForceEnded = True
             break
         continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in instructions.components:
+        for thisComponent in r_instructions.components:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
@@ -674,14 +699,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    # --- Ending Routine "instructions" ---
-    for thisComponent in instructions.components:
+    # --- Ending Routine "r_instructions" ---
+    for thisComponent in r_instructions.components:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # store stop times for instructions
-    instructions.tStop = globalClock.getTime(format='float')
-    instructions.tStopRefresh = tThisFlipGlobal
-    thisExp.addData('instructions.stopped', instructions.tStop)
+    # store stop times for r_instructions
+    r_instructions.tStop = globalClock.getTime(format='float')
+    r_instructions.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('r_instructions.stopped', r_instructions.tStop)
     # check responses
     if key_instruct.keys in ['', [], None]:  # No response was made
         key_instruct.keys = None
@@ -690,7 +715,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         thisExp.addData('key_instruct.rt', key_instruct.rt)
         thisExp.addData('key_instruct.duration', key_instruct.duration)
     thisExp.nextEntry()
-    # the Routine "instructions" was not non-slip safe, so reset the non-slip timer
+    # the Routine "r_instructions" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
     # set up handler to look after randomisation of conditions etc
@@ -727,27 +752,27 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             for paramName in thisStimulus:
                 globals()[paramName] = thisStimulus[paramName]
         
-        # --- Prepare to start Routine "preparation" ---
-        # create an object to store info about Routine preparation
-        preparation = data.Routine(
-            name='preparation',
+        # --- Prepare to start Routine "r_preparation" ---
+        # create an object to store info about Routine r_preparation
+        r_preparation = data.Routine(
+            name='r_preparation',
             components=[video_nature_cue_text],
         )
-        preparation.status = NOT_STARTED
+        r_preparation.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
         # Run 'Begin Routine' code from load_design
         video_file = 'stimuli/' + selected_order[f'video{video_index}']
         label_text = selected_order[f'label{video_index}']
-        # store start times for preparation
-        preparation.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-        preparation.tStart = globalClock.getTime(format='float')
-        preparation.status = STARTED
-        thisExp.addData('preparation.started', preparation.tStart)
-        preparation.maxDuration = None
+        # store start times for r_preparation
+        r_preparation.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        r_preparation.tStart = globalClock.getTime(format='float')
+        r_preparation.status = STARTED
+        thisExp.addData('r_preparation.started', r_preparation.tStart)
+        r_preparation.maxDuration = None
         # keep track of which components have finished
-        preparationComponents = preparation.components
-        for thisComponent in preparation.components:
+        r_preparationComponents = r_preparation.components
+        for thisComponent in r_preparation.components:
             thisComponent.tStart = None
             thisComponent.tStop = None
             thisComponent.tStartRefresh = None
@@ -759,8 +784,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         _timeToFirstFrame = win.getFutureFlipTime(clock="now")
         frameN = -1
         
-        # --- Run Routine "preparation" ---
-        preparation.forceEnded = routineForceEnded = not continueRoutine
+        # --- Run Routine "r_preparation" ---
+        r_preparation.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine and routineTimer.getTime() < 5.0:
             # if trial has changed, end Routine now
             if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
@@ -814,17 +839,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     thisExp=thisExp, 
                     win=win, 
                     timers=[routineTimer, globalClock], 
-                    currentRoutine=preparation,
+                    currentRoutine=r_preparation,
                 )
                 # skip the frame we paused on
                 continue
             
             # check if all components have finished
             if not continueRoutine:  # a component has requested a forced-end of Routine
-                preparation.forceEnded = routineForceEnded = True
+                r_preparation.forceEnded = routineForceEnded = True
                 break
             continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in preparation.components:
+            for thisComponent in r_preparation.components:
                 if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                     continueRoutine = True
                     break  # at least one component has not yet finished
@@ -833,45 +858,45 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                 win.flip()
         
-        # --- Ending Routine "preparation" ---
-        for thisComponent in preparation.components:
+        # --- Ending Routine "r_preparation" ---
+        for thisComponent in r_preparation.components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        # store stop times for preparation
-        preparation.tStop = globalClock.getTime(format='float')
-        preparation.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('preparation.stopped', preparation.tStop)
+        # store stop times for r_preparation
+        r_preparation.tStop = globalClock.getTime(format='float')
+        r_preparation.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('r_preparation.stopped', r_preparation.tStop)
         # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-        if preparation.maxDurationReached:
-            routineTimer.addTime(-preparation.maxDuration)
-        elif preparation.forceEnded:
+        if r_preparation.maxDurationReached:
+            routineTimer.addTime(-r_preparation.maxDuration)
+        elif r_preparation.forceEnded:
             routineTimer.reset()
         else:
             routineTimer.addTime(-5.000000)
         
-        # --- Prepare to start Routine "video" ---
-        # create an object to store info about Routine video
-        video = data.Routine(
-            name='video',
-            components=[video_stimuli, fixation_cross, skip_video],
+        # --- Prepare to start Routine "r_video" ---
+        # create an object to store info about Routine r_video
+        r_video = data.Routine(
+            name='r_video',
+            components=[video, fixation_cross, skip_video],
         )
-        video.status = NOT_STARTED
+        r_video.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
-        video_stimuli.setMovie(video_file)
+        video.setMovie(video_file)
         # create starting attributes for skip_video
         skip_video.keys = []
         skip_video.rt = []
         _skip_video_allKeys = []
-        # store start times for video
-        video.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-        video.tStart = globalClock.getTime(format='float')
-        video.status = STARTED
-        thisExp.addData('video.started', video.tStart)
-        video.maxDuration = None
+        # store start times for r_video
+        r_video.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        r_video.tStart = globalClock.getTime(format='float')
+        r_video.status = STARTED
+        thisExp.addData('r_video.started', r_video.tStart)
+        r_video.maxDuration = None
         # keep track of which components have finished
-        videoComponents = video.components
-        for thisComponent in video.components:
+        r_videoComponents = r_video.components
+        for thisComponent in r_video.components:
             thisComponent.tStart = None
             thisComponent.tStop = None
             thisComponent.tStartRefresh = None
@@ -883,8 +908,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         _timeToFirstFrame = win.getFutureFlipTime(clock="now")
         frameN = -1
         
-        # --- Run Routine "video" ---
-        video.forceEnded = routineForceEnded = not continueRoutine
+        # --- Run Routine "r_video" ---
+        r_video.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
             if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
@@ -896,36 +921,36 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
             
-            # *video_stimuli* updates
+            # *video* updates
             
-            # if video_stimuli is starting this frame...
-            if video_stimuli.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # if video is starting this frame...
+            if video.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                 # keep track of start time/frame for later
-                video_stimuli.frameNStart = frameN  # exact frame index
-                video_stimuli.tStart = t  # local t and not account for scr refresh
-                video_stimuli.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(video_stimuli, 'tStartRefresh')  # time at next scr refresh
+                video.frameNStart = frameN  # exact frame index
+                video.tStart = t  # local t and not account for scr refresh
+                video.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(video, 'tStartRefresh')  # time at next scr refresh
                 # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'video_stimuli.started')
+                thisExp.timestampOnFlip(win, 'video.started')
                 # update status
-                video_stimuli.status = STARTED
-                video_stimuli.setAutoDraw(True)
-                video_stimuli.play()
+                video.status = STARTED
+                video.setAutoDraw(True)
+                video.play()
             
-            # if video_stimuli is stopping this frame...
-            if video_stimuli.status == STARTED:
-                if bool(False) or video_stimuli.isFinished:
+            # if video is stopping this frame...
+            if video.status == STARTED:
+                if bool(False) or video.isFinished:
                     # keep track of stop time/frame for later
-                    video_stimuli.tStop = t  # not accounting for scr refresh
-                    video_stimuli.tStopRefresh = tThisFlipGlobal  # on global time
-                    video_stimuli.frameNStop = frameN  # exact frame index
+                    video.tStop = t  # not accounting for scr refresh
+                    video.tStopRefresh = tThisFlipGlobal  # on global time
+                    video.frameNStop = frameN  # exact frame index
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'video_stimuli.stopped')
+                    thisExp.timestampOnFlip(win, 'video.stopped')
                     # update status
-                    video_stimuli.status = FINISHED
-                    video_stimuli.setAutoDraw(False)
-                    video_stimuli.stop()
-            if video_stimuli.isFinished:  # force-end the Routine
+                    video.status = FINISHED
+                    video.setAutoDraw(False)
+                    video.stop()
+            if video.isFinished:  # force-end the Routine
                 continueRoutine = False
             
             # *fixation_cross* updates
@@ -988,17 +1013,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     thisExp=thisExp, 
                     win=win, 
                     timers=[routineTimer, globalClock], 
-                    currentRoutine=video,
+                    currentRoutine=r_video,
                 )
                 # skip the frame we paused on
                 continue
             
             # check if all components have finished
             if not continueRoutine:  # a component has requested a forced-end of Routine
-                video.forceEnded = routineForceEnded = True
+                r_video.forceEnded = routineForceEnded = True
                 break
             continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in video.components:
+            for thisComponent in r_video.components:
                 if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                     continueRoutine = True
                     break  # at least one component has not yet finished
@@ -1007,15 +1032,15 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                 win.flip()
         
-        # --- Ending Routine "video" ---
-        for thisComponent in video.components:
+        # --- Ending Routine "r_video" ---
+        for thisComponent in r_video.components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        # store stop times for video
-        video.tStop = globalClock.getTime(format='float')
-        video.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('video.stopped', video.tStop)
-        video_stimuli.stop()  # ensure movie has stopped at end of Routine
+        # store stop times for r_video
+        r_video.tStop = globalClock.getTime(format='float')
+        r_video.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('r_video.stopped', r_video.tStop)
+        video.stop()  # ensure movie has stopped at end of Routine
         # check responses
         if skip_video.keys in ['', [], None]:  # No response was made
             skip_video.keys = None
@@ -1023,31 +1048,31 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if skip_video.keys != None:  # we had a response
             stimuli.addData('skip_video.rt', skip_video.rt)
             stimuli.addData('skip_video.duration', skip_video.duration)
-        # the Routine "video" was not non-slip safe, so reset the non-slip timer
+        # the Routine "r_video" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
-        # --- Prepare to start Routine "SAM_1" ---
-        # create an object to store info about Routine SAM_1
-        SAM_1 = data.Routine(
-            name='SAM_1',
+        # --- Prepare to start Routine "r_SAM_1" ---
+        # create an object to store info about Routine r_SAM_1
+        r_SAM_1 = data.Routine(
+            name='r_SAM_1',
             components=[question_sam_1_text, question_sam_1, rating_sam_1],
         )
-        SAM_1.status = NOT_STARTED
+        r_SAM_1.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
         # create starting attributes for rating_sam_1
         rating_sam_1.keys = []
         rating_sam_1.rt = []
         _rating_sam_1_allKeys = []
-        # store start times for SAM_1
-        SAM_1.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-        SAM_1.tStart = globalClock.getTime(format='float')
-        SAM_1.status = STARTED
-        thisExp.addData('SAM_1.started', SAM_1.tStart)
-        SAM_1.maxDuration = None
+        # store start times for r_SAM_1
+        r_SAM_1.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        r_SAM_1.tStart = globalClock.getTime(format='float')
+        r_SAM_1.status = STARTED
+        thisExp.addData('r_SAM_1.started', r_SAM_1.tStart)
+        r_SAM_1.maxDuration = None
         # keep track of which components have finished
-        SAM_1Components = SAM_1.components
-        for thisComponent in SAM_1.components:
+        r_SAM_1Components = r_SAM_1.components
+        for thisComponent in r_SAM_1.components:
             thisComponent.tStart = None
             thisComponent.tStop = None
             thisComponent.tStartRefresh = None
@@ -1059,8 +1084,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         _timeToFirstFrame = win.getFutureFlipTime(clock="now")
         frameN = -1
         
-        # --- Run Routine "SAM_1" ---
-        SAM_1.forceEnded = routineForceEnded = not continueRoutine
+        # --- Run Routine "r_SAM_1" ---
+        r_SAM_1.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
             if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
@@ -1129,7 +1154,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 win.callOnFlip(rating_sam_1.clock.reset)  # t=0 on next screen flip
                 win.callOnFlip(rating_sam_1.clearEvents, eventType='keyboard')  # clear events on next screen flip
             if rating_sam_1.status == STARTED and not waitOnFlip:
-                theseKeys = rating_sam_1.getKeys(keyList=['1','2','3','4','5','6','7','8','9'], ignoreKeys=["escape"], waitRelease=False)
+                theseKeys = rating_sam_1.getKeys(keyList=['1','2','3','4','5'], ignoreKeys=["escape"], waitRelease=False)
                 _rating_sam_1_allKeys.extend(theseKeys)
                 if len(_rating_sam_1_allKeys):
                     rating_sam_1.keys = _rating_sam_1_allKeys[-1].name  # just the last key pressed
@@ -1150,17 +1175,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     thisExp=thisExp, 
                     win=win, 
                     timers=[routineTimer, globalClock], 
-                    currentRoutine=SAM_1,
+                    currentRoutine=r_SAM_1,
                 )
                 # skip the frame we paused on
                 continue
             
             # check if all components have finished
             if not continueRoutine:  # a component has requested a forced-end of Routine
-                SAM_1.forceEnded = routineForceEnded = True
+                r_SAM_1.forceEnded = routineForceEnded = True
                 break
             continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in SAM_1.components:
+            for thisComponent in r_SAM_1.components:
                 if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                     continueRoutine = True
                     break  # at least one component has not yet finished
@@ -1169,14 +1194,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                 win.flip()
         
-        # --- Ending Routine "SAM_1" ---
-        for thisComponent in SAM_1.components:
+        # --- Ending Routine "r_SAM_1" ---
+        for thisComponent in r_SAM_1.components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        # store stop times for SAM_1
-        SAM_1.tStop = globalClock.getTime(format='float')
-        SAM_1.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('SAM_1.stopped', SAM_1.tStop)
+        # store stop times for r_SAM_1
+        r_SAM_1.tStop = globalClock.getTime(format='float')
+        r_SAM_1.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('r_SAM_1.stopped', r_SAM_1.tStop)
         # check responses
         if rating_sam_1.keys in ['', [], None]:  # No response was made
             rating_sam_1.keys = None
@@ -1184,31 +1209,31 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if rating_sam_1.keys != None:  # we had a response
             stimuli.addData('rating_sam_1.rt', rating_sam_1.rt)
             stimuli.addData('rating_sam_1.duration', rating_sam_1.duration)
-        # the Routine "SAM_1" was not non-slip safe, so reset the non-slip timer
+        # the Routine "r_SAM_1" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
-        # --- Prepare to start Routine "SAM_2" ---
-        # create an object to store info about Routine SAM_2
-        SAM_2 = data.Routine(
-            name='SAM_2',
+        # --- Prepare to start Routine "r_SAM_2" ---
+        # create an object to store info about Routine r_SAM_2
+        r_SAM_2 = data.Routine(
+            name='r_SAM_2',
             components=[question_sam_2_text, question_sam_2, rating_sam_2],
         )
-        SAM_2.status = NOT_STARTED
+        r_SAM_2.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
         # create starting attributes for rating_sam_2
         rating_sam_2.keys = []
         rating_sam_2.rt = []
         _rating_sam_2_allKeys = []
-        # store start times for SAM_2
-        SAM_2.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-        SAM_2.tStart = globalClock.getTime(format='float')
-        SAM_2.status = STARTED
-        thisExp.addData('SAM_2.started', SAM_2.tStart)
-        SAM_2.maxDuration = None
+        # store start times for r_SAM_2
+        r_SAM_2.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        r_SAM_2.tStart = globalClock.getTime(format='float')
+        r_SAM_2.status = STARTED
+        thisExp.addData('r_SAM_2.started', r_SAM_2.tStart)
+        r_SAM_2.maxDuration = None
         # keep track of which components have finished
-        SAM_2Components = SAM_2.components
-        for thisComponent in SAM_2.components:
+        r_SAM_2Components = r_SAM_2.components
+        for thisComponent in r_SAM_2.components:
             thisComponent.tStart = None
             thisComponent.tStop = None
             thisComponent.tStartRefresh = None
@@ -1220,8 +1245,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         _timeToFirstFrame = win.getFutureFlipTime(clock="now")
         frameN = -1
         
-        # --- Run Routine "SAM_2" ---
-        SAM_2.forceEnded = routineForceEnded = not continueRoutine
+        # --- Run Routine "r_SAM_2" ---
+        r_SAM_2.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
             if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
@@ -1290,7 +1315,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 win.callOnFlip(rating_sam_2.clock.reset)  # t=0 on next screen flip
                 win.callOnFlip(rating_sam_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
             if rating_sam_2.status == STARTED and not waitOnFlip:
-                theseKeys = rating_sam_2.getKeys(keyList=['1','2','3','4','5','6','7','8','9'], ignoreKeys=["escape"], waitRelease=False)
+                theseKeys = rating_sam_2.getKeys(keyList=['1','2','3','4','5'], ignoreKeys=["escape"], waitRelease=False)
                 _rating_sam_2_allKeys.extend(theseKeys)
                 if len(_rating_sam_2_allKeys):
                     rating_sam_2.keys = _rating_sam_2_allKeys[-1].name  # just the last key pressed
@@ -1311,17 +1336,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     thisExp=thisExp, 
                     win=win, 
                     timers=[routineTimer, globalClock], 
-                    currentRoutine=SAM_2,
+                    currentRoutine=r_SAM_2,
                 )
                 # skip the frame we paused on
                 continue
             
             # check if all components have finished
             if not continueRoutine:  # a component has requested a forced-end of Routine
-                SAM_2.forceEnded = routineForceEnded = True
+                r_SAM_2.forceEnded = routineForceEnded = True
                 break
             continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in SAM_2.components:
+            for thisComponent in r_SAM_2.components:
                 if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                     continueRoutine = True
                     break  # at least one component has not yet finished
@@ -1330,14 +1355,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                 win.flip()
         
-        # --- Ending Routine "SAM_2" ---
-        for thisComponent in SAM_2.components:
+        # --- Ending Routine "r_SAM_2" ---
+        for thisComponent in r_SAM_2.components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        # store stop times for SAM_2
-        SAM_2.tStop = globalClock.getTime(format='float')
-        SAM_2.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('SAM_2.stopped', SAM_2.tStop)
+        # store stop times for r_SAM_2
+        r_SAM_2.tStop = globalClock.getTime(format='float')
+        r_SAM_2.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('r_SAM_2.stopped', r_SAM_2.tStop)
         # check responses
         if rating_sam_2.keys in ['', [], None]:  # No response was made
             rating_sam_2.keys = None
@@ -1345,31 +1370,31 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if rating_sam_2.keys != None:  # we had a response
             stimuli.addData('rating_sam_2.rt', rating_sam_2.rt)
             stimuli.addData('rating_sam_2.duration', rating_sam_2.duration)
-        # the Routine "SAM_2" was not non-slip safe, so reset the non-slip timer
+        # the Routine "r_SAM_2" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
-        # --- Prepare to start Routine "SAM_3" ---
-        # create an object to store info about Routine SAM_3
-        SAM_3 = data.Routine(
-            name='SAM_3',
+        # --- Prepare to start Routine "r_SAM_3" ---
+        # create an object to store info about Routine r_SAM_3
+        r_SAM_3 = data.Routine(
+            name='r_SAM_3',
             components=[question_sam_3_text, question_sam_3, rating_sam_3],
         )
-        SAM_3.status = NOT_STARTED
+        r_SAM_3.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
         # create starting attributes for rating_sam_3
         rating_sam_3.keys = []
         rating_sam_3.rt = []
         _rating_sam_3_allKeys = []
-        # store start times for SAM_3
-        SAM_3.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-        SAM_3.tStart = globalClock.getTime(format='float')
-        SAM_3.status = STARTED
-        thisExp.addData('SAM_3.started', SAM_3.tStart)
-        SAM_3.maxDuration = None
+        # store start times for r_SAM_3
+        r_SAM_3.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        r_SAM_3.tStart = globalClock.getTime(format='float')
+        r_SAM_3.status = STARTED
+        thisExp.addData('r_SAM_3.started', r_SAM_3.tStart)
+        r_SAM_3.maxDuration = None
         # keep track of which components have finished
-        SAM_3Components = SAM_3.components
-        for thisComponent in SAM_3.components:
+        r_SAM_3Components = r_SAM_3.components
+        for thisComponent in r_SAM_3.components:
             thisComponent.tStart = None
             thisComponent.tStop = None
             thisComponent.tStartRefresh = None
@@ -1381,8 +1406,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         _timeToFirstFrame = win.getFutureFlipTime(clock="now")
         frameN = -1
         
-        # --- Run Routine "SAM_3" ---
-        SAM_3.forceEnded = routineForceEnded = not continueRoutine
+        # --- Run Routine "r_SAM_3" ---
+        r_SAM_3.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
             if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
@@ -1451,7 +1476,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 win.callOnFlip(rating_sam_3.clock.reset)  # t=0 on next screen flip
                 win.callOnFlip(rating_sam_3.clearEvents, eventType='keyboard')  # clear events on next screen flip
             if rating_sam_3.status == STARTED and not waitOnFlip:
-                theseKeys = rating_sam_3.getKeys(keyList=['1','2','3','4','5','6','7','8','9'], ignoreKeys=["escape"], waitRelease=False)
+                theseKeys = rating_sam_3.getKeys(keyList=['1','2','3','4','5'], ignoreKeys=["escape"], waitRelease=False)
                 _rating_sam_3_allKeys.extend(theseKeys)
                 if len(_rating_sam_3_allKeys):
                     rating_sam_3.keys = _rating_sam_3_allKeys[-1].name  # just the last key pressed
@@ -1472,17 +1497,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     thisExp=thisExp, 
                     win=win, 
                     timers=[routineTimer, globalClock], 
-                    currentRoutine=SAM_3,
+                    currentRoutine=r_SAM_3,
                 )
                 # skip the frame we paused on
                 continue
             
             # check if all components have finished
             if not continueRoutine:  # a component has requested a forced-end of Routine
-                SAM_3.forceEnded = routineForceEnded = True
+                r_SAM_3.forceEnded = routineForceEnded = True
                 break
             continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in SAM_3.components:
+            for thisComponent in r_SAM_3.components:
                 if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                     continueRoutine = True
                     break  # at least one component has not yet finished
@@ -1491,14 +1516,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                 win.flip()
         
-        # --- Ending Routine "SAM_3" ---
-        for thisComponent in SAM_3.components:
+        # --- Ending Routine "r_SAM_3" ---
+        for thisComponent in r_SAM_3.components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        # store stop times for SAM_3
-        SAM_3.tStop = globalClock.getTime(format='float')
-        SAM_3.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('SAM_3.stopped', SAM_3.tStop)
+        # store stop times for r_SAM_3
+        r_SAM_3.tStop = globalClock.getTime(format='float')
+        r_SAM_3.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('r_SAM_3.stopped', r_SAM_3.tStop)
         # check responses
         if rating_sam_3.keys in ['', [], None]:  # No response was made
             rating_sam_3.keys = None
@@ -1506,7 +1531,136 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if rating_sam_3.keys != None:  # we had a response
             stimuli.addData('rating_sam_3.rt', rating_sam_3.rt)
             stimuli.addData('rating_sam_3.duration', rating_sam_3.duration)
-        # the Routine "SAM_3" was not non-slip safe, so reset the non-slip timer
+        # the Routine "r_SAM_3" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
+        
+        # --- Prepare to start Routine "r_focus_questionnaire" ---
+        # create an object to store info about Routine r_focus_questionnaire
+        r_focus_questionnaire = data.Routine(
+            name='r_focus_questionnaire',
+            components=[focus_text, focus_slider],
+        )
+        r_focus_questionnaire.status = NOT_STARTED
+        continueRoutine = True
+        # update component parameters for each repeat
+        focus_slider.reset()
+        # store start times for r_focus_questionnaire
+        r_focus_questionnaire.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        r_focus_questionnaire.tStart = globalClock.getTime(format='float')
+        r_focus_questionnaire.status = STARTED
+        thisExp.addData('r_focus_questionnaire.started', r_focus_questionnaire.tStart)
+        r_focus_questionnaire.maxDuration = None
+        # keep track of which components have finished
+        r_focus_questionnaireComponents = r_focus_questionnaire.components
+        for thisComponent in r_focus_questionnaire.components:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "r_focus_questionnaire" ---
+        r_focus_questionnaire.forceEnded = routineForceEnded = not continueRoutine
+        while continueRoutine:
+            # if trial has changed, end Routine now
+            if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
+                continueRoutine = False
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *focus_text* updates
+            
+            # if focus_text is starting this frame...
+            if focus_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                focus_text.frameNStart = frameN  # exact frame index
+                focus_text.tStart = t  # local t and not account for scr refresh
+                focus_text.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(focus_text, 'tStartRefresh')  # time at next scr refresh
+                # update status
+                focus_text.status = STARTED
+                focus_text.setAutoDraw(True)
+            
+            # if focus_text is active this frame...
+            if focus_text.status == STARTED:
+                # update params
+                pass
+            
+            # *focus_slider* updates
+            
+            # if focus_slider is starting this frame...
+            if focus_slider.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                focus_slider.frameNStart = frameN  # exact frame index
+                focus_slider.tStart = t  # local t and not account for scr refresh
+                focus_slider.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(focus_slider, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'focus_slider.started')
+                # update status
+                focus_slider.status = STARTED
+                focus_slider.setAutoDraw(True)
+            
+            # if focus_slider is active this frame...
+            if focus_slider.status == STARTED:
+                # update params
+                pass
+            
+            # Check focus_slider for response to end Routine
+            if focus_slider.getRating() is not None and focus_slider.status == STARTED:
+                continueRoutine = False
+            
+            # check for quit (typically the Esc key)
+            if defaultKeyboard.getKeys(keyList=["escape"]):
+                thisExp.status = FINISHED
+            if thisExp.status == FINISHED or endExpNow:
+                endExperiment(thisExp, win=win)
+                return
+            # pause experiment here if requested
+            if thisExp.status == PAUSED:
+                pauseExperiment(
+                    thisExp=thisExp, 
+                    win=win, 
+                    timers=[routineTimer, globalClock], 
+                    currentRoutine=r_focus_questionnaire,
+                )
+                # skip the frame we paused on
+                continue
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                r_focus_questionnaire.forceEnded = routineForceEnded = True
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in r_focus_questionnaire.components:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "r_focus_questionnaire" ---
+        for thisComponent in r_focus_questionnaire.components:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # store stop times for r_focus_questionnaire
+        r_focus_questionnaire.tStop = globalClock.getTime(format='float')
+        r_focus_questionnaire.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('r_focus_questionnaire.stopped', r_focus_questionnaire.tStop)
+        stimuli.addData('focus_slider.response', focus_slider.getRating())
+        stimuli.addData('focus_slider.rt', focus_slider.getRT())
+        # the Routine "r_focus_questionnaire" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         # mark thisStimulus as finished
         if hasattr(thisStimulus, 'status'):
@@ -1530,28 +1684,25 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # if running in a Session with a Liaison client, send data up to now
         thisSession.sendExperimentData()
     
-    # --- Prepare to start Routine "questionnaire" ---
-    # create an object to store info about Routine questionnaire
-    questionnaire = data.Routine(
-        name='questionnaire',
-        components=[questionnaire_form, questionnaire_done],
+    # --- Prepare to start Routine "r_final_questionnaire" ---
+    # create an object to store info about Routine r_final_questionnaire
+    r_final_questionnaire = data.Routine(
+        name='r_final_questionnaire',
+        components=[opinion_text, opinion_slider],
     )
-    questionnaire.status = NOT_STARTED
+    r_final_questionnaire.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
-    # create starting attributes for questionnaire_done
-    questionnaire_done.keys = []
-    questionnaire_done.rt = []
-    _questionnaire_done_allKeys = []
-    # store start times for questionnaire
-    questionnaire.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-    questionnaire.tStart = globalClock.getTime(format='float')
-    questionnaire.status = STARTED
-    thisExp.addData('questionnaire.started', questionnaire.tStart)
-    questionnaire.maxDuration = None
+    opinion_slider.reset()
+    # store start times for r_final_questionnaire
+    r_final_questionnaire.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    r_final_questionnaire.tStart = globalClock.getTime(format='float')
+    r_final_questionnaire.status = STARTED
+    thisExp.addData('r_final_questionnaire.started', r_final_questionnaire.tStart)
+    r_final_questionnaire.maxDuration = None
     # keep track of which components have finished
-    questionnaireComponents = questionnaire.components
-    for thisComponent in questionnaire.components:
+    r_final_questionnaireComponents = r_final_questionnaire.components
+    for thisComponent in r_final_questionnaire.components:
         thisComponent.tStart = None
         thisComponent.tStop = None
         thisComponent.tStartRefresh = None
@@ -1563,8 +1714,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     _timeToFirstFrame = win.getFutureFlipTime(clock="now")
     frameN = -1
     
-    # --- Run Routine "questionnaire" ---
-    questionnaire.forceEnded = routineForceEnded = not continueRoutine
+    # --- Run Routine "r_final_questionnaire" ---
+    r_final_questionnaire.forceEnded = routineForceEnded = not continueRoutine
     while continueRoutine:
         # get current time
         t = routineTimer.getTime()
@@ -1573,53 +1724,47 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *questionnaire_form* updates
+        # *opinion_text* updates
         
-        # if questionnaire_form is starting this frame...
-        if questionnaire_form.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # if opinion_text is starting this frame...
+        if opinion_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            questionnaire_form.frameNStart = frameN  # exact frame index
-            questionnaire_form.tStart = t  # local t and not account for scr refresh
-            questionnaire_form.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(questionnaire_form, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'questionnaire_form.started')
+            opinion_text.frameNStart = frameN  # exact frame index
+            opinion_text.tStart = t  # local t and not account for scr refresh
+            opinion_text.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(opinion_text, 'tStartRefresh')  # time at next scr refresh
             # update status
-            questionnaire_form.status = STARTED
-            questionnaire_form.setAutoDraw(True)
+            opinion_text.status = STARTED
+            opinion_text.setAutoDraw(True)
         
-        # if questionnaire_form is active this frame...
-        if questionnaire_form.status == STARTED:
+        # if opinion_text is active this frame...
+        if opinion_text.status == STARTED:
             # update params
             pass
         
-        # *questionnaire_done* updates
-        waitOnFlip = False
+        # *opinion_slider* updates
         
-        # if questionnaire_done is starting this frame...
-        if questionnaire_done.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # if opinion_slider is starting this frame...
+        if opinion_slider.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            questionnaire_done.frameNStart = frameN  # exact frame index
-            questionnaire_done.tStart = t  # local t and not account for scr refresh
-            questionnaire_done.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(questionnaire_done, 'tStartRefresh')  # time at next scr refresh
+            opinion_slider.frameNStart = frameN  # exact frame index
+            opinion_slider.tStart = t  # local t and not account for scr refresh
+            opinion_slider.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(opinion_slider, 'tStartRefresh')  # time at next scr refresh
             # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'questionnaire_done.started')
+            thisExp.timestampOnFlip(win, 'opinion_slider.started')
             # update status
-            questionnaire_done.status = STARTED
-            # keyboard checking is just starting
-            waitOnFlip = True
-            win.callOnFlip(questionnaire_done.clock.reset)  # t=0 on next screen flip
-            win.callOnFlip(questionnaire_done.clearEvents, eventType='keyboard')  # clear events on next screen flip
-        if questionnaire_done.status == STARTED and not waitOnFlip:
-            theseKeys = questionnaire_done.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
-            _questionnaire_done_allKeys.extend(theseKeys)
-            if len(_questionnaire_done_allKeys):
-                questionnaire_done.keys = _questionnaire_done_allKeys[-1].name  # just the last key pressed
-                questionnaire_done.rt = _questionnaire_done_allKeys[-1].rt
-                questionnaire_done.duration = _questionnaire_done_allKeys[-1].duration
-                # a response ends the routine
-                continueRoutine = False
+            opinion_slider.status = STARTED
+            opinion_slider.setAutoDraw(True)
+        
+        # if opinion_slider is active this frame...
+        if opinion_slider.status == STARTED:
+            # update params
+            pass
+        
+        # Check opinion_slider for response to end Routine
+        if opinion_slider.getRating() is not None and opinion_slider.status == STARTED:
+            continueRoutine = False
         
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -1633,17 +1778,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 thisExp=thisExp, 
                 win=win, 
                 timers=[routineTimer, globalClock], 
-                currentRoutine=questionnaire,
+                currentRoutine=r_final_questionnaire,
             )
             # skip the frame we paused on
             continue
         
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
-            questionnaire.forceEnded = routineForceEnded = True
+            r_final_questionnaire.forceEnded = routineForceEnded = True
             break
         continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in questionnaire.components:
+        for thisComponent in r_final_questionnaire.components:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
@@ -1652,25 +1797,122 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    # --- Ending Routine "questionnaire" ---
-    for thisComponent in questionnaire.components:
+    # --- Ending Routine "r_final_questionnaire" ---
+    for thisComponent in r_final_questionnaire.components:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # store stop times for questionnaire
-    questionnaire.tStop = globalClock.getTime(format='float')
-    questionnaire.tStopRefresh = tThisFlipGlobal
-    thisExp.addData('questionnaire.stopped', questionnaire.tStop)
-    questionnaire_form.addDataToExp(thisExp, 'rows')
-    questionnaire_form.autodraw = False
-    # check responses
-    if questionnaire_done.keys in ['', [], None]:  # No response was made
-        questionnaire_done.keys = None
-    thisExp.addData('questionnaire_done.keys',questionnaire_done.keys)
-    if questionnaire_done.keys != None:  # we had a response
-        thisExp.addData('questionnaire_done.rt', questionnaire_done.rt)
-        thisExp.addData('questionnaire_done.duration', questionnaire_done.duration)
+    # store stop times for r_final_questionnaire
+    r_final_questionnaire.tStop = globalClock.getTime(format='float')
+    r_final_questionnaire.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('r_final_questionnaire.stopped', r_final_questionnaire.tStop)
+    thisExp.addData('opinion_slider.response', opinion_slider.getRating())
+    thisExp.addData('opinion_slider.rt', opinion_slider.getRT())
     thisExp.nextEntry()
-    # the Routine "questionnaire" was not non-slip safe, so reset the non-slip timer
+    # the Routine "r_final_questionnaire" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
+    
+    # --- Prepare to start Routine "r_bck_form" ---
+    # create an object to store info about Routine r_bck_form
+    r_bck_form = data.Routine(
+        name='r_bck_form',
+        components=[final_questionnaire_form_2],
+    )
+    r_bck_form.status = NOT_STARTED
+    continueRoutine = True
+    # update component parameters for each repeat
+    # store start times for r_bck_form
+    r_bck_form.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    r_bck_form.tStart = globalClock.getTime(format='float')
+    r_bck_form.status = STARTED
+    thisExp.addData('r_bck_form.started', r_bck_form.tStart)
+    r_bck_form.maxDuration = None
+    # keep track of which components have finished
+    r_bck_formComponents = r_bck_form.components
+    for thisComponent in r_bck_form.components:
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    frameN = -1
+    
+    # --- Run Routine "r_bck_form" ---
+    r_bck_form.forceEnded = routineForceEnded = not continueRoutine
+    while continueRoutine:
+        # get current time
+        t = routineTimer.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *final_questionnaire_form_2* updates
+        
+        # if final_questionnaire_form_2 is starting this frame...
+        if final_questionnaire_form_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            final_questionnaire_form_2.frameNStart = frameN  # exact frame index
+            final_questionnaire_form_2.tStart = t  # local t and not account for scr refresh
+            final_questionnaire_form_2.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(final_questionnaire_form_2, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'final_questionnaire_form_2.started')
+            # update status
+            final_questionnaire_form_2.status = STARTED
+            final_questionnaire_form_2.setAutoDraw(True)
+        
+        # if final_questionnaire_form_2 is active this frame...
+        if final_questionnaire_form_2.status == STARTED:
+            # update params
+            pass
+        
+        # check for quit (typically the Esc key)
+        if defaultKeyboard.getKeys(keyList=["escape"]):
+            thisExp.status = FINISHED
+        if thisExp.status == FINISHED or endExpNow:
+            endExperiment(thisExp, win=win)
+            return
+        # pause experiment here if requested
+        if thisExp.status == PAUSED:
+            pauseExperiment(
+                thisExp=thisExp, 
+                win=win, 
+                timers=[routineTimer, globalClock], 
+                currentRoutine=r_bck_form,
+            )
+            # skip the frame we paused on
+            continue
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            r_bck_form.forceEnded = routineForceEnded = True
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in r_bck_form.components:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # --- Ending Routine "r_bck_form" ---
+    for thisComponent in r_bck_form.components:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    # store stop times for r_bck_form
+    r_bck_form.tStop = globalClock.getTime(format='float')
+    r_bck_form.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('r_bck_form.stopped', r_bck_form.tStop)
+    final_questionnaire_form_2.addDataToExp(thisExp, 'rows')
+    final_questionnaire_form_2.autodraw = False
+    thisExp.nextEntry()
+    # the Routine "r_bck_form" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
     # mark experiment as finished
