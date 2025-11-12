@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov 12 11:50:48 2025
+    on Wed Nov 12 12:39:31 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -483,9 +483,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         depth=0.0);
     question_sam_1 = visual.ImageStim(
         win=win,
-        name='question_sam_1', 
+        name='question_sam_1', units='norm', 
         image='stimuli/sam-1.png', mask=None, anchor='center',
-        ori=0.0, pos=(0, 0), draggable=False, size=None,
+        ori=0.0, pos=(0,-0.3), draggable=False, size=(1.3,0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -501,9 +501,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         depth=0.0);
     question_sam_2 = visual.ImageStim(
         win=win,
-        name='question_sam_2', 
+        name='question_sam_2', units='norm', 
         image='stimuli/sam-2.png', mask=None, anchor='center',
-        ori=0.0, pos=(0, 0), draggable=False, size=None,
+        ori=0.0, pos=(0, -0.3), draggable=False, size=(1.3,0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -519,9 +519,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         depth=0.0);
     question_sam_3 = visual.ImageStim(
         win=win,
-        name='question_sam_3', 
+        name='question_sam_3', units='norm', 
         image='stimuli/sam-3.png', mask=None, anchor='center',
-        ori=0.0, pos=(0, 0), draggable=False, size=None,
+        ori=0.0, pos=(0, -0.3), draggable=False, size=(1.3,0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -757,7 +757,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Run Routine "r_baseline" ---
     r_baseline.forceEnded = routineForceEnded = not continueRoutine
-    while continueRoutine and routineTimer.getTime() < 120.0:
+    while continueRoutine and routineTimer.getTime() < 5.0:
         # get current time
         t = routineTimer.getTime()
         tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -786,7 +786,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # if baseline_countdown is stopping this frame...
         if baseline_countdown.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > baseline_countdown.tStartRefresh + 120-frameTolerance:
+            if tThisFlipGlobal > baseline_countdown.tStartRefresh + 5-frameTolerance:
                 # keep track of stop time/frame for later
                 baseline_countdown.tStop = t  # not accounting for scr refresh
                 baseline_countdown.tStopRefresh = tThisFlipGlobal  # on global time
@@ -816,7 +816,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # if baseline_text is stopping this frame...
         if baseline_text.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > baseline_text.tStartRefresh + 120-frameTolerance:
+            if tThisFlipGlobal > baseline_text.tStartRefresh + 5-frameTolerance:
                 # keep track of stop time/frame for later
                 baseline_text.tStop = t  # not accounting for scr refresh
                 baseline_text.tStopRefresh = tThisFlipGlobal  # on global time
@@ -870,7 +870,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     elif r_baseline.forceEnded:
         routineTimer.reset()
     else:
-        routineTimer.addTime(-120.000000)
+        routineTimer.addTime(-5.000000)
     thisExp.nextEntry()
     
     # set up handler to look after randomisation of conditions etc
@@ -1187,7 +1187,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         
         # --- Run Routine "r_video" ---
         r_video.forceEnded = routineForceEnded = not continueRoutine
-        while continueRoutine and routineTimer.getTime() < 120.0:
+        while continueRoutine and routineTimer.getTime() < 5.0:
             # if trial has changed, end Routine now
             if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
                 continueRoutine = False
@@ -1217,7 +1217,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # if video is stopping this frame...
             if video.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > video.tStartRefresh + 120-frameTolerance or video.isFinished:
+                if tThisFlipGlobal > video.tStartRefresh + 5-frameTolerance or video.isFinished:
                     # keep track of stop time/frame for later
                     video.tStop = t  # not accounting for scr refresh
                     video.tStopRefresh = tThisFlipGlobal  # on global time
@@ -1277,7 +1277,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         elif r_video.forceEnded:
             routineTimer.reset()
         else:
-            routineTimer.addTime(-120.000000)
+            routineTimer.addTime(-5.000000)
         
         # --- Prepare to start Routine "r_SAM_1" ---
         # create an object to store info about Routine r_SAM_1
