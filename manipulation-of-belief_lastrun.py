@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov 12 16:15:38 2025
+    on Wed Nov 12 16:42:22 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -264,6 +264,18 @@ def setupDevices(expInfo, thisExp, win):
             deviceClass='keyboard',
             deviceName='key_instruct',
         )
+    if deviceManager.getDevice('skip_baseline') is None:
+        # initialise skip_baseline
+        skip_baseline = deviceManager.addDevice(
+            deviceClass='keyboard',
+            deviceName='skip_baseline',
+        )
+    if deviceManager.getDevice('skip_video') is None:
+        # initialise skip_video
+        skip_video = deviceManager.addDevice(
+            deviceClass='keyboard',
+            deviceName='skip_video',
+        )
     if deviceManager.getDevice('rating_sam_1') is None:
         # initialise rating_sam_1
         rating_sam_1 = deviceManager.addDevice(
@@ -419,6 +431,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-1.0);
+    skip_baseline = keyboard.Keyboard(deviceName='skip_baseline')
     # Run 'Begin Experiment' code from text_align_2
     # Code components should usually appear at the top
     # of the routine. This one has to appear after the
@@ -467,11 +480,12 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     video = visual.MovieStim(
         win, name='video',
         filename=None, movieLib='ffpyplayer',
-        loop=False, volume=1.0, noAudio=False,
+        loop=False, volume=1.0, noAudio=True,
         pos=(0, 0), size=(2.0,2.0), units='norm',
         ori=0.0, anchor='center',opacity=None, contrast=1.0,
         depth=0
     )
+    skip_video = keyboard.Keyboard(deviceName='skip_video')
     
     # --- Initialize components for Routine "r_SAM_1" ---
     question_sam_1_text = visual.TextStim(win=win, name='question_sam_1_text',
@@ -730,11 +744,15 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # create an object to store info about Routine r_baseline
     r_baseline = data.Routine(
         name='r_baseline',
-        components=[baseline_countdown, baseline_text],
+        components=[baseline_countdown, baseline_text, skip_baseline],
     )
     r_baseline.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
+    # create starting attributes for skip_baseline
+    skip_baseline.keys = []
+    skip_baseline.rt = []
+    _skip_baseline_allKeys = []
     # store start times for r_baseline
     r_baseline.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
     r_baseline.tStart = globalClock.getTime(format='float')
@@ -757,7 +775,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Run Routine "r_baseline" ---
     r_baseline.forceEnded = routineForceEnded = not continueRoutine
-    while continueRoutine and routineTimer.getTime() < 120.0:
+    while continueRoutine:
         # get current time
         t = routineTimer.getTime()
         tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -825,6 +843,34 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 baseline_text.status = FINISHED
                 baseline_text.setAutoDraw(False)
         
+        # *skip_baseline* updates
+        waitOnFlip = False
+        
+        # if skip_baseline is starting this frame...
+        if skip_baseline.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            skip_baseline.frameNStart = frameN  # exact frame index
+            skip_baseline.tStart = t  # local t and not account for scr refresh
+            skip_baseline.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(skip_baseline, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'skip_baseline.started')
+            # update status
+            skip_baseline.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(skip_baseline.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(skip_baseline.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if skip_baseline.status == STARTED and not waitOnFlip:
+            theseKeys = skip_baseline.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
+            _skip_baseline_allKeys.extend(theseKeys)
+            if len(_skip_baseline_allKeys):
+                skip_baseline.keys = _skip_baseline_allKeys[0].name  # just the first key pressed
+                skip_baseline.rt = _skip_baseline_allKeys[0].rt
+                skip_baseline.duration = _skip_baseline_allKeys[0].duration
+                # a response ends the routine
+                continueRoutine = False
+        
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
             thisExp.status = FINISHED
@@ -864,14 +910,16 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     r_baseline.tStop = globalClock.getTime(format='float')
     r_baseline.tStopRefresh = tThisFlipGlobal
     thisExp.addData('r_baseline.stopped', r_baseline.tStop)
-    # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-    if r_baseline.maxDurationReached:
-        routineTimer.addTime(-r_baseline.maxDuration)
-    elif r_baseline.forceEnded:
-        routineTimer.reset()
-    else:
-        routineTimer.addTime(-120.000000)
+    # check responses
+    if skip_baseline.keys in ['', [], None]:  # No response was made
+        skip_baseline.keys = None
+    thisExp.addData('skip_baseline.keys',skip_baseline.keys)
+    if skip_baseline.keys != None:  # we had a response
+        thisExp.addData('skip_baseline.rt', skip_baseline.rt)
+        thisExp.addData('skip_baseline.duration', skip_baseline.duration)
     thisExp.nextEntry()
+    # the Routine "r_baseline" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
     
     # set up handler to look after randomisation of conditions etc
     stimuli = data.TrialHandler2(
@@ -1159,12 +1207,16 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine r_video
         r_video = data.Routine(
             name='r_video',
-            components=[video],
+            components=[video, skip_video],
         )
         r_video.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
         video.setMovie(video_file)
+        # create starting attributes for skip_video
+        skip_video.keys = []
+        skip_video.rt = []
+        _skip_video_allKeys = []
         # store start times for r_video
         r_video.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         r_video.tStart = globalClock.getTime(format='float')
@@ -1187,7 +1239,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         
         # --- Run Routine "r_video" ---
         r_video.forceEnded = routineForceEnded = not continueRoutine
-        while continueRoutine and routineTimer.getTime() < 120.0:
+        while continueRoutine:
             # if trial has changed, end Routine now
             if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
                 continueRoutine = False
@@ -1231,6 +1283,34 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if video.isFinished:  # force-end the Routine
                 continueRoutine = False
             
+            # *skip_video* updates
+            waitOnFlip = False
+            
+            # if skip_video is starting this frame...
+            if skip_video.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                skip_video.frameNStart = frameN  # exact frame index
+                skip_video.tStart = t  # local t and not account for scr refresh
+                skip_video.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(skip_video, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'skip_video.started')
+                # update status
+                skip_video.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(skip_video.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(skip_video.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if skip_video.status == STARTED and not waitOnFlip:
+                theseKeys = skip_video.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
+                _skip_video_allKeys.extend(theseKeys)
+                if len(_skip_video_allKeys):
+                    skip_video.keys = _skip_video_allKeys[0].name  # just the first key pressed
+                    skip_video.rt = _skip_video_allKeys[0].rt
+                    skip_video.duration = _skip_video_allKeys[0].duration
+                    # a response ends the routine
+                    continueRoutine = False
+            
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
                 thisExp.status = FINISHED
@@ -1271,13 +1351,15 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         r_video.tStopRefresh = tThisFlipGlobal
         thisExp.addData('r_video.stopped', r_video.tStop)
         video.stop()  # ensure movie has stopped at end of Routine
-        # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-        if r_video.maxDurationReached:
-            routineTimer.addTime(-r_video.maxDuration)
-        elif r_video.forceEnded:
-            routineTimer.reset()
-        else:
-            routineTimer.addTime(-120.000000)
+        # check responses
+        if skip_video.keys in ['', [], None]:  # No response was made
+            skip_video.keys = None
+        stimuli.addData('skip_video.keys',skip_video.keys)
+        if skip_video.keys != None:  # we had a response
+            stimuli.addData('skip_video.rt', skip_video.rt)
+            stimuli.addData('skip_video.duration', skip_video.duration)
+        # the Routine "r_video" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
         
         # --- Prepare to start Routine "r_SAM_1" ---
         # create an object to store info about Routine r_SAM_1
