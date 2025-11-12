@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Nov  5 16:28:27 2025
+    on Wed Nov 12 12:39:31 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -405,13 +405,20 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     instructions_text.alignText= 'left'
     
     # --- Initialize components for Routine "r_baseline" ---
+    baseline_countdown = visual.TextStim(win=win, name='baseline_countdown',
+        text='',
+        font='Arial',
+        units='norm', pos=(0, -0.5), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
     baseline_text = visual.TextStim(win=win, name='baseline_text',
-        text='Please wait still and relax for 2 minutes, starting from now, while we measure the baseline for your heartbeat at rest.\n\nOnly good vibes :)',
+        text='Please now wait still and relax while we measure the baseline for your heartbeat at rest.\n\nOnly good vibes :)',
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
+        depth=-1.0);
     # Run 'Begin Experiment' code from text_align_2
     # Code components should usually appear at the top
     # of the routine. This one has to appear after the
@@ -447,6 +454,15 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         languageStyle='LTR',
         depth=-1.0);
     
+    # --- Initialize components for Routine "r_fixation" ---
+    fixation_cross = visual.ShapeStim(
+        win=win, name='fixation_cross', vertices='cross',
+        size=(30,30),
+        ori=0.0, pos=(0, 0), draggable=False, anchor='center',
+        lineWidth=1.0,
+        colorSpace='rgb', lineColor='white', fillColor=[-0.1765, -0.1765, -0.1765],
+        opacity=None, depth=0.0, interpolate=True)
+    
     # --- Initialize components for Routine "r_video" ---
     video = visual.MovieStim(
         win, name='video',
@@ -456,13 +472,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         ori=0.0, anchor='center',opacity=None, contrast=1.0,
         depth=0
     )
-    fixation_cross = visual.ShapeStim(
-        win=win, name='fixation_cross', vertices='cross',
-        size=(30,30),
-        ori=0.0, pos=(0, 0), draggable=False, anchor='center',
-        lineWidth=1.0,
-        colorSpace='rgb', lineColor='white', fillColor=[-0.1765, -0.1765, -0.1765],
-        opacity=None, depth=-1.0, interpolate=True)
     
     # --- Initialize components for Routine "r_SAM_1" ---
     question_sam_1_text = visual.TextStim(win=win, name='question_sam_1_text',
@@ -474,9 +483,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         depth=0.0);
     question_sam_1 = visual.ImageStim(
         win=win,
-        name='question_sam_1', 
+        name='question_sam_1', units='norm', 
         image='stimuli/sam-1.png', mask=None, anchor='center',
-        ori=0.0, pos=(0, 0), draggable=False, size=None,
+        ori=0.0, pos=(0,-0.3), draggable=False, size=(1.3,0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -492,9 +501,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         depth=0.0);
     question_sam_2 = visual.ImageStim(
         win=win,
-        name='question_sam_2', 
+        name='question_sam_2', units='norm', 
         image='stimuli/sam-2.png', mask=None, anchor='center',
-        ori=0.0, pos=(0, 0), draggable=False, size=None,
+        ori=0.0, pos=(0, -0.3), draggable=False, size=(1.3,0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -510,9 +519,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         depth=0.0);
     question_sam_3 = visual.ImageStim(
         win=win,
-        name='question_sam_3', 
+        name='question_sam_3', units='norm', 
         image='stimuli/sam-3.png', mask=None, anchor='center',
-        ori=0.0, pos=(0, 0), draggable=False, size=None,
+        ori=0.0, pos=(0, -0.3), draggable=False, size=(1.3,0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -721,7 +730,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # create an object to store info about Routine r_baseline
     r_baseline = data.Routine(
         name='r_baseline',
-        components=[baseline_text],
+        components=[baseline_countdown, baseline_text],
     )
     r_baseline.status = NOT_STARTED
     continueRoutine = True
@@ -755,6 +764,36 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         tThisFlipGlobal = win.getFutureFlipTime(clock=None)
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
+        
+        # *baseline_countdown* updates
+        
+        # if baseline_countdown is starting this frame...
+        if baseline_countdown.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            baseline_countdown.frameNStart = frameN  # exact frame index
+            baseline_countdown.tStart = t  # local t and not account for scr refresh
+            baseline_countdown.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(baseline_countdown, 'tStartRefresh')  # time at next scr refresh
+            # update status
+            baseline_countdown.status = STARTED
+            baseline_countdown.setAutoDraw(True)
+        
+        # if baseline_countdown is active this frame...
+        if baseline_countdown.status == STARTED:
+            # update params
+            baseline_countdown.setText("{:02d}:{:02d}".format((120-int(t))//60, (120-int(t))%60), log=False)
+        
+        # if baseline_countdown is stopping this frame...
+        if baseline_countdown.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > baseline_countdown.tStartRefresh + 5-frameTolerance:
+                # keep track of stop time/frame for later
+                baseline_countdown.tStop = t  # not accounting for scr refresh
+                baseline_countdown.tStopRefresh = tThisFlipGlobal  # on global time
+                baseline_countdown.frameNStop = frameN  # exact frame index
+                # update status
+                baseline_countdown.status = FINISHED
+                baseline_countdown.setAutoDraw(False)
         
         # *baseline_text* updates
         
@@ -881,7 +920,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         video_file = os.path.join(base_dir, 'stimuli', selected_order[f'video{video_index}'])
         label_text = selected_order[f'label{video_index}']
         
-        stimuli.addData('video_id', video_index)
+        stimuli.addData('video_id', selected_order[f'video{video_index}'])
         stimuli.addData('belief', selected_order[f'label{video_index}'])
         # store start times for r_preparation
         r_preparation.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
@@ -993,11 +1032,134 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         else:
             routineTimer.addTime(-5.000000)
         
+        # --- Prepare to start Routine "r_fixation" ---
+        # create an object to store info about Routine r_fixation
+        r_fixation = data.Routine(
+            name='r_fixation',
+            components=[fixation_cross],
+        )
+        r_fixation.status = NOT_STARTED
+        continueRoutine = True
+        # update component parameters for each repeat
+        # store start times for r_fixation
+        r_fixation.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        r_fixation.tStart = globalClock.getTime(format='float')
+        r_fixation.status = STARTED
+        thisExp.addData('r_fixation.started', r_fixation.tStart)
+        r_fixation.maxDuration = None
+        # keep track of which components have finished
+        r_fixationComponents = r_fixation.components
+        for thisComponent in r_fixation.components:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "r_fixation" ---
+        r_fixation.forceEnded = routineForceEnded = not continueRoutine
+        while continueRoutine and routineTimer.getTime() < 1.0:
+            # if trial has changed, end Routine now
+            if hasattr(thisStimulus, 'status') and thisStimulus.status == STOPPING:
+                continueRoutine = False
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *fixation_cross* updates
+            
+            # if fixation_cross is starting this frame...
+            if fixation_cross.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                fixation_cross.frameNStart = frameN  # exact frame index
+                fixation_cross.tStart = t  # local t and not account for scr refresh
+                fixation_cross.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(fixation_cross, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'fixation_cross.started')
+                # update status
+                fixation_cross.status = STARTED
+                fixation_cross.setAutoDraw(True)
+            
+            # if fixation_cross is active this frame...
+            if fixation_cross.status == STARTED:
+                # update params
+                pass
+            
+            # if fixation_cross is stopping this frame...
+            if fixation_cross.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > fixation_cross.tStartRefresh + 1-frameTolerance:
+                    # keep track of stop time/frame for later
+                    fixation_cross.tStop = t  # not accounting for scr refresh
+                    fixation_cross.tStopRefresh = tThisFlipGlobal  # on global time
+                    fixation_cross.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'fixation_cross.stopped')
+                    # update status
+                    fixation_cross.status = FINISHED
+                    fixation_cross.setAutoDraw(False)
+            
+            # check for quit (typically the Esc key)
+            if defaultKeyboard.getKeys(keyList=["escape"]):
+                thisExp.status = FINISHED
+            if thisExp.status == FINISHED or endExpNow:
+                endExperiment(thisExp, win=win)
+                return
+            # pause experiment here if requested
+            if thisExp.status == PAUSED:
+                pauseExperiment(
+                    thisExp=thisExp, 
+                    win=win, 
+                    timers=[routineTimer, globalClock], 
+                    currentRoutine=r_fixation,
+                )
+                # skip the frame we paused on
+                continue
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                r_fixation.forceEnded = routineForceEnded = True
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in r_fixation.components:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "r_fixation" ---
+        for thisComponent in r_fixation.components:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # store stop times for r_fixation
+        r_fixation.tStop = globalClock.getTime(format='float')
+        r_fixation.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('r_fixation.stopped', r_fixation.tStop)
+        # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
+        if r_fixation.maxDurationReached:
+            routineTimer.addTime(-r_fixation.maxDuration)
+        elif r_fixation.forceEnded:
+            routineTimer.reset()
+        else:
+            routineTimer.addTime(-1.000000)
+        
         # --- Prepare to start Routine "r_video" ---
         # create an object to store info about Routine r_video
         r_video = data.Routine(
             name='r_video',
-            components=[video, fixation_cross],
+            components=[video],
         )
         r_video.status = NOT_STARTED
         continueRoutine = True
@@ -1068,40 +1230,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     video.stop()
             if video.isFinished:  # force-end the Routine
                 continueRoutine = False
-            
-            # *fixation_cross* updates
-            
-            # if fixation_cross is starting this frame...
-            if fixation_cross.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                # keep track of start time/frame for later
-                fixation_cross.frameNStart = frameN  # exact frame index
-                fixation_cross.tStart = t  # local t and not account for scr refresh
-                fixation_cross.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(fixation_cross, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'fixation_cross.started')
-                # update status
-                fixation_cross.status = STARTED
-                fixation_cross.setAutoDraw(True)
-            
-            # if fixation_cross is active this frame...
-            if fixation_cross.status == STARTED:
-                # update params
-                pass
-            
-            # if fixation_cross is stopping this frame...
-            if fixation_cross.status == STARTED:
-                # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > fixation_cross.tStartRefresh + 5-frameTolerance:
-                    # keep track of stop time/frame for later
-                    fixation_cross.tStop = t  # not accounting for scr refresh
-                    fixation_cross.tStopRefresh = tThisFlipGlobal  # on global time
-                    fixation_cross.frameNStop = frameN  # exact frame index
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'fixation_cross.stopped')
-                    # update status
-                    fixation_cross.status = FINISHED
-                    fixation_cross.setAutoDraw(False)
             
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
