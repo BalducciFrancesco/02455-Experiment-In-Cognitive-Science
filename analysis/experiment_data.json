@@ -1,0 +1,1554 @@
+[
+  {
+    "participant_id": 1,
+    "focus": {
+      "mean": 3.75,
+      "all_ratings": [
+        2.0,
+        4.0,
+        5.0,
+        4.0
+      ]
+    },
+    "opinion": 2.0,
+    "timestamp_start": "2025-11-12 14h45.49.380213 +0100",
+    "timestamp_end": 1762955895.835112,
+    "stimuli": [
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            2.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 253.96998820900623,
+            "sam1_end": 259.8028724589967,
+            "sam2_start": 259.8033655839972,
+            "sam2_end": 267.09875562500383,
+            "sam3_start": 267.09891070899903,
+            "sam3_end": 275.3068194590014
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            2.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 415.4815793339949,
+            "sam1_end": 419.8403808340081,
+            "sam2_start": 419.8412870839966,
+            "sam2_end": 424.5224937919993,
+            "sam3_start": 424.5226521250006,
+            "sam3_end": 465.1406762499973
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            5.0,
+            1.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 578.996025875007,
+            "sam1_end": 599.044088834009,
+            "sam2_start": 599.0445065420063,
+            "sam2_end": 600.6941060840036,
+            "sam3_start": 600.6942537499999,
+            "sam3_end": 601.8536482920026
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            1.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 730.1827607919986,
+            "sam1_end": 732.6580779170035,
+            "sam2_start": 732.6589257500018,
+            "sam2_end": 734.5015405419981,
+            "sam3_start": 734.5017147089966,
+            "sam3_end": 736.7012004169956
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 2,
+    "focus": {
+      "mean": 4.5,
+      "all_ratings": [
+        4.0,
+        5.0,
+        4.0,
+        5.0
+      ]
+    },
+    "opinion": 4.0,
+    "timestamp_start": "2025-11-12 15h07.02.441991 +0100",
+    "timestamp_end": 1762957107.305174,
+    "stimuli": [
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            2.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 250.08012462500483,
+            "sam1_end": 257.31900941600907,
+            "sam2_start": 257.32021716600866,
+            "sam2_end": 262.7448065829958,
+            "sam3_start": 262.7449683750019,
+            "sam3_end": 273.1205131250026
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            2.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 408.2303543330054,
+            "sam1_end": 411.4201136659976,
+            "sam2_start": 411.4206304580002,
+            "sam2_end": 414.22592024999904,
+            "sam3_start": 414.2260497910029,
+            "sam3_end": 416.2261813750083
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            3.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 545.1710082500067,
+            "sam1_end": 548.4973408750084,
+            "sam2_start": 548.4977793330036,
+            "sam2_end": 551.6181058329967,
+            "sam3_start": 551.6182327080023,
+            "sam3_end": 556.2558607910032
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            4.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 668.5655000830011,
+            "sam1_end": 671.0814712080028,
+            "sam2_start": 671.0817637500004,
+            "sam2_end": 672.995882083007,
+            "sam3_start": 672.9959252080007,
+            "sam3_end": 676.3879740410048
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 3,
+    "focus": {
+      "mean": 2.5,
+      "all_ratings": [
+        3.0,
+        2.0,
+        2.0,
+        3.0
+      ]
+    },
+    "opinion": 3.0,
+    "timestamp_start": "2025-11-12 15h28.33.887873 +0100",
+    "timestamp_end": 1762958457.389694,
+    "stimuli": [
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            2.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 253.87685425000384,
+            "sam1_end": 268.2647185419919,
+            "sam2_start": 268.2650390829949,
+            "sam2_end": 275.4287849169923,
+            "sam3_start": 275.4289147919917,
+            "sam3_end": 284.936384457993
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            1.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 423.1411917499936,
+            "sam1_end": 430.0465863749996,
+            "sam2_start": 430.0488469169941,
+            "sam2_end": 433.6839827920048,
+            "sam3_start": 433.6841420419951,
+            "sam3_end": 441.1759009999951
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            2.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 554.6984959999972,
+            "sam1_end": 576.8908710419928,
+            "sam2_start": 576.8909934580006,
+            "sam2_end": 583.4738757500018,
+            "sam3_start": 583.4739936249971,
+            "sam3_end": 589.9082043329981
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            3.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 719.340242833001,
+            "sam1_end": 725.4493472079921,
+            "sam2_start": 725.4497482919978,
+            "sam2_end": 728.7225249170006,
+            "sam3_start": 728.7226856670022,
+            "sam3_end": 733.338327666992
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 4,
+    "focus": {
+      "mean": 3.25,
+      "all_ratings": [
+        2.0,
+        3.0,
+        3.0,
+        5.0
+      ]
+    },
+    "opinion": 2.0,
+    "timestamp_start": "2025-11-12 15h50.03.543173 +0100",
+    "timestamp_end": 1762959752.384257,
+    "stimuli": [
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            2.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 248.34889400000972,
+            "sam1_end": 262.9791620420001,
+            "sam2_start": 262.9802158750099,
+            "sam2_end": 268.19430270799785,
+            "sam3_start": 268.1944749999966,
+            "sam3_end": 276.593973791998
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            2.0,
+            3.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 395.7707317500026,
+            "sam1_end": 421.9483714170056,
+            "sam2_start": 421.9484860000084,
+            "sam2_end": 427.0742650000029,
+            "sam3_start": 427.0743877500063,
+            "sam3_end": 432.69091645799926
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            4.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 567.6251666250027,
+            "sam1_end": 580.214099542005,
+            "sam2_start": 580.2154350830097,
+            "sam2_end": 588.3709895830107,
+            "sam3_start": 588.3715579999989,
+            "sam3_end": 595.403379542011
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            5.0,
+            4.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 727.6821281250013,
+            "sam1_end": 730.105281666998,
+            "sam2_start": 730.1055571670004,
+            "sam2_end": 732.5587445830024,
+            "sam3_start": 732.5588616669993,
+            "sam3_end": 736.7003901670105
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 5,
+    "focus": {
+      "mean": 3.75,
+      "all_ratings": [
+        3.0,
+        5.0,
+        5.0,
+        2.0
+      ]
+    },
+    "opinion": 1.0,
+    "timestamp_start": "2025-11-13 13h27.35.396197 +0100",
+    "timestamp_end": 1763037684.62208,
+    "stimuli": [
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            2.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 288.56869880000886,
+            "sam1_end": 297.5949285000097,
+            "sam2_start": 297.59502020000946,
+            "sam2_end": 308.82910520001315,
+            "sam3_start": 308.82923700001265,
+            "sam3_end": 315.878523700012
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            2.0,
+            4.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 450.2000206000084,
+            "sam1_end": 459.6950603000005,
+            "sam2_start": 459.6951779000083,
+            "sam2_end": 469.6453222000128,
+            "sam3_start": 469.6454406000121,
+            "sam3_end": 487.8124814000039
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            2.0,
+            4.0
+          ],
+          "timestamps": {
+            "sam1_start": 624.6391543000063,
+            "sam1_end": 635.801123199999,
+            "sam2_start": 635.8012234000053,
+            "sam2_end": 643.2681215000048,
+            "sam3_start": 643.268292400011,
+            "sam3_end": 655.7361349999992
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            4.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 795.0483115000097,
+            "sam1_end": 798.505388000005,
+            "sam2_start": 798.5055673000024,
+            "sam2_end": 810.0724511000008,
+            "sam3_start": 810.0725684000063,
+            "sam3_end": 816.589490000013
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 6,
+    "focus": {
+      "mean": 4.25,
+      "all_ratings": [
+        4.0,
+        4.0,
+        5.0,
+        4.0
+      ]
+    },
+    "opinion": 3.0,
+    "timestamp_start": "2025-11-13 13h55.51.890442 +0100",
+    "timestamp_end": 1763039352.3604572,
+    "stimuli": [
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            2.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 349.5119999000017,
+            "sam1_end": 362.4482546000072,
+            "sam2_start": 362.4484178999992,
+            "sam2_end": 371.7299042000086,
+            "sam3_start": 371.73001820000354,
+            "sam3_end": 376.9472952000069
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            1.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 509.6502337999991,
+            "sam1_end": 513.233867700008,
+            "sam2_start": 513.234034299996,
+            "sam2_end": 517.9507550999988,
+            "sam3_start": 517.9509319000063,
+            "sam3_end": 521.7178491000086
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            4.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 655.0123448000086,
+            "sam1_end": 657.1034134000074,
+            "sam2_start": 657.1035836000083,
+            "sam2_end": 659.7692332000006,
+            "sam3_start": 659.7693551999982,
+            "sam3_end": 665.0867126000085
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            3.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 784.482844099999,
+            "sam1_end": 786.588158700004,
+            "sam2_start": 786.588320099996,
+            "sam2_end": 788.9879861000081,
+            "sam3_start": 788.9881450000103,
+            "sam3_end": 790.9544138000056
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 11,
+    "focus": {
+      "mean": 5.0,
+      "all_ratings": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "opinion": 3.0,
+    "timestamp_start": "2025-11-14 15h41.09.126886 +0100",
+    "timestamp_end": 1763132416.070648,
+    "stimuli": [
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            3.0,
+            4.0
+          ],
+          "timestamps": {
+            "sam1_start": 407.92423029997735,
+            "sam1_end": 430.110468400002,
+            "sam2_start": 430.1106779999973,
+            "sam2_end": 447.0939668999927,
+            "sam3_start": 447.0941829999792,
+            "sam3_end": 497.0781667999981
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            4.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 672.9964233999781,
+            "sam1_end": 689.3686259999813,
+            "sam2_start": 689.3687269999937,
+            "sam2_end": 703.701961099985,
+            "sam3_start": 703.7020556000061,
+            "sam3_end": 742.5359382999886
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            2.0,
+            4.0
+          ],
+          "timestamps": {
+            "sam1_start": 916.5317494999908,
+            "sam1_end": 947.776308600005,
+            "sam2_start": 947.7765125999867,
+            "sam2_end": 953.8097429999908,
+            "sam3_start": 953.809843199997,
+            "sam3_end": 963.6595684000058
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            1.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 1088.6802242999838,
+            "sam1_end": 1101.1857344000018,
+            "sam2_start": 1101.1858024999965,
+            "sam2_end": 1109.4525926999922,
+            "sam3_start": 1109.4526484999806,
+            "sam3_end": 1120.0194333999823
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 12,
+    "focus": {
+      "mean": 4.0,
+      "all_ratings": [
+        5.0,
+        4.0,
+        4.0,
+        3.0
+      ]
+    },
+    "opinion": 5.0,
+    "timestamp_start": "2025-11-15 09h47.32.159301 +0100",
+    "timestamp_end": 1763197324.3743613,
+    "stimuli": [
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            1.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 335.7015263999929,
+            "sam1_end": 353.9603790999972,
+            "sam2_start": 353.9604402999976,
+            "sam2_end": 367.3606758999813,
+            "sam3_start": 367.3607583999983,
+            "sam3_end": 384.3943333000061
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            1.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 542.6840147000039,
+            "sam1_end": 553.7800901999872,
+            "sam2_start": 553.7801522999944,
+            "sam2_end": 559.8472606999858,
+            "sam3_start": 559.847329399985,
+            "sam3_end": 566.7139233000053
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 702.5716423999984,
+            "sam1_end": 711.3160841999925,
+            "sam2_start": 711.3161529999925,
+            "sam2_end": 716.8663067999878,
+            "sam3_start": 716.866365599999,
+            "sam3_end": 721.4161724000005
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            1.0,
+            4.0
+          ],
+          "timestamps": {
+            "sam1_start": 837.6527168999892,
+            "sam1_end": 844.1347922999994,
+            "sam2_start": 844.1348539000028,
+            "sam2_end": 850.785250099987,
+            "sam3_start": 850.7853654999926,
+            "sam3_end": 861.0848674000008
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 13,
+    "focus": {
+      "mean": 2.0,
+      "all_ratings": [
+        3.0,
+        2.0,
+        1.0,
+        2.0
+      ]
+    },
+    "opinion": 4.0,
+    "timestamp_start": "2025-11-15 10h16.37.803044 +0100",
+    "timestamp_end": 1763199104.281412,
+    "stimuli": [
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            1.0,
+            4.0
+          ],
+          "timestamps": {
+            "sam1_start": 322.0616675000056,
+            "sam1_end": 343.9470460000157,
+            "sam2_start": 343.9471440000052,
+            "sam2_end": 355.1470451000205,
+            "sam3_start": 355.1471098000184,
+            "sam3_end": 396.69801660001394
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            1.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 537.5939002000086,
+            "sam1_end": 557.2835941000085,
+            "sam2_start": 557.2836919999972,
+            "sam2_end": 559.7666065999947,
+            "sam3_start": 559.7666705000156,
+            "sam3_end": 567.0169435999996
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            1.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 689.4909512000158,
+            "sam1_end": 694.5354055000062,
+            "sam2_start": 694.5354988000181,
+            "sam2_end": 698.0188802000193,
+            "sam3_start": 698.0189525000169,
+            "sam3_end": 702.1690503999998
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            1.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 847.8111493000179,
+            "sam1_end": 858.3711302000156,
+            "sam2_start": 858.3711876000161,
+            "sam2_end": 862.5046156000171,
+            "sam3_start": 862.5047063000093,
+            "sam3_end": 873.7213656000094
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 15,
+    "focus": {
+      "mean": 4.5,
+      "all_ratings": [
+        5.0,
+        5.0,
+        4.0,
+        4.0
+      ]
+    },
+    "opinion": 4.0,
+    "timestamp_start": "2025-11-17 14h32.02.990507 +0100",
+    "timestamp_end": 1763387179.116207,
+    "stimuli": [
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            1.0,
+            4.0
+          ],
+          "timestamps": {
+            "sam1_start": 321.27505649998784,
+            "sam1_end": 336.74131700000726,
+            "sam2_start": 336.7414245000109,
+            "sam2_end": 349.5414526999812,
+            "sam3_start": 349.5415588999749,
+            "sam3_end": 364.75895769998897
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            3.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 521.1969354000175,
+            "sam1_end": 539.7281024000258,
+            "sam2_start": 539.7282589999959,
+            "sam2_end": 551.8115081000142,
+            "sam3_start": 551.8116435999982,
+            "sam3_end": 556.361947300029
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            4.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 675.2288412000053,
+            "sam1_end": 682.3963453000179,
+            "sam2_start": 682.3964739000075,
+            "sam2_end": 692.5472851999803,
+            "sam3_start": 692.5474195000133,
+            "sam3_end": 696.1798181000049
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            4.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 822.2979217999964,
+            "sam1_end": 832.6320274000173,
+            "sam2_start": 832.6321598999784,
+            "sam2_end": 836.7823291000095,
+            "sam3_start": 836.7824579000007,
+            "sam3_end": 842.0487429000204
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 16,
+    "focus": {
+      "mean": 3.0,
+      "all_ratings": [
+        3.0,
+        2.0,
+        4.0,
+        3.0
+      ]
+    },
+    "opinion": 4.0,
+    "timestamp_start": "2025-11-19 13h39.06.282580 +0100",
+    "timestamp_end": 1763556716.289767,
+    "stimuli": [
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            3.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 294.8269205999095,
+            "sam1_end": 304.8546226999024,
+            "sam2_start": 304.8549607999157,
+            "sam2_end": 311.00424139993265,
+            "sam3_start": 311.0044241999276,
+            "sam3_end": 324.88840649998747
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            2.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 447.6446993999416,
+            "sam1_end": 455.6404360999586,
+            "sam2_start": 455.6405498000095,
+            "sam2_end": 461.4402586999349,
+            "sam3_start": 461.4403785999166,
+            "sam3_end": 464.6402650999371
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            3.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 591.4540473999223,
+            "sam1_end": 595.3926982999546,
+            "sam2_start": 595.3928221999668,
+            "sam2_end": 597.7086994999554,
+            "sam3_start": 597.7088071999606,
+            "sam3_end": 604.5255398999434
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            3.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 741.2268668999895,
+            "sam1_end": 744.194645499927,
+            "sam2_start": 744.1947961999103,
+            "sam2_end": 747.4107018999057,
+            "sam3_start": 747.4107789999107,
+            "sam3_end": 749.5444444000022
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 17,
+    "focus": {
+      "mean": 3.5,
+      "all_ratings": [
+        4.0,
+        4.0,
+        3.0,
+        3.0
+      ]
+    },
+    "opinion": 4.0,
+    "timestamp_start": "2025-11-19 14h03.03.978009 +0100",
+    "timestamp_end": 1763558183.9922986,
+    "stimuli": [
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            3.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 334.3936529000057,
+            "sam1_end": 348.44789700000547,
+            "sam2_start": 348.4481898000231,
+            "sam2_end": 354.16407609998714,
+            "sam3_start": 354.16424449998885,
+            "sam3_end": 359.6986628000159
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 489.3174923999468,
+            "sam1_end": 497.8159780999413,
+            "sam2_start": 497.8161222999916,
+            "sam2_end": 499.6996986999875,
+            "sam3_start": 499.699857300031,
+            "sam3_end": 504.1496682999423
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 639.8420203999849,
+            "sam1_end": 646.1351001999574,
+            "sam2_start": 646.1352332000388,
+            "sam2_end": 649.1682817999972,
+            "sam3_start": 649.1683973999461,
+            "sam3_end": 660.6856802999973
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            2.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 782.5777552999789,
+            "sam1_end": 785.2703190000029,
+            "sam2_start": 785.2704442000249,
+            "sam2_end": 788.2369268999901,
+            "sam3_start": 788.2370406000409,
+            "sam3_end": 790.5704201000044
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 18,
+    "focus": {
+      "mean": 4.0,
+      "all_ratings": [
+        4.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    },
+    "opinion": 3.0,
+    "timestamp_start": "2025-11-19 14h27.28.037360 +0100",
+    "timestamp_end": 1763559674.42076,
+    "stimuli": [
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            2.0,
+            1.0
+          ],
+          "timestamps": {
+            "sam1_start": 315.2669125000248,
+            "sam1_end": 322.62023620004766,
+            "sam2_start": 322.6203449999448,
+            "sam2_end": 329.0370189000387,
+            "sam3_start": 329.03713099996094,
+            "sam3_end": 335.2535770999966
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 463.8306797000114,
+            "sam1_end": 470.75589190004393,
+            "sam2_start": 470.7559990000445,
+            "sam2_end": 482.8728359000525,
+            "sam3_start": 482.8729608999565,
+            "sam3_end": 509.8733327999944
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            4.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 648.3575670999708,
+            "sam1_end": 653.8257527999813,
+            "sam2_start": 653.8259286000393,
+            "sam2_end": 660.9589266000548,
+            "sam3_start": 660.9590437000152,
+            "sam3_end": 667.4423336000182
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            1.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 803.6696781000355,
+            "sam1_end": 808.5106776000466,
+            "sam2_start": 808.510824500001,
+            "sam2_end": 810.728019000031,
+            "sam3_start": 810.7281442000531,
+            "sam3_end": 814.2278521000408
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 19,
+    "focus": {
+      "mean": 3.0,
+      "all_ratings": [
+        4.0,
+        3.0,
+        3.0,
+        2.0
+      ]
+    },
+    "opinion": 2.0,
+    "timestamp_start": "2025-11-19 14h59.20.219368 +0100",
+    "timestamp_end": 1763561632.7689843,
+    "stimuli": [
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            2.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 312.8165587000549,
+            "sam1_end": 320.2483912000898,
+            "sam2_start": 320.2485074000433,
+            "sam2_end": 325.982817000011,
+            "sam3_start": 325.9829290000489,
+            "sam3_end": 337.7492969000013
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            2.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 472.23387310002,
+            "sam1_end": 476.8848059000448,
+            "sam2_start": 476.8849525999976,
+            "sam2_end": 483.4672131000552,
+            "sam3_start": 483.46729820000473,
+            "sam3_end": 549.7195843000663
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            3.0,
+            2.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 682.4752717000665,
+            "sam1_end": 693.5719594000839,
+            "sam2_start": 693.5720786000602,
+            "sam2_end": 698.1548853000859,
+            "sam3_start": 698.1550342000555,
+            "sam3_end": 702.8550439000828
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            3.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 839.3935937000206,
+            "sam1_end": 848.5078315000283,
+            "sam2_start": 848.5079680000199,
+            "sam2_end": 855.9074764000252,
+            "sam3_start": 855.907658400014,
+            "sam3_end": 861.0901925000362
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 20,
+    "focus": {
+      "mean": 4.0,
+      "all_ratings": [
+        5.0,
+        3.0,
+        4.0,
+        4.0
+      ]
+    },
+    "opinion": 4.0,
+    "timestamp_start": "2025-11-19 15h27.23.219381 +0100",
+    "timestamp_end": 1763563224.1336198,
+    "stimuli": [
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 283.5745416000718,
+            "sam1_end": 291.77063560008537,
+            "sam2_start": 291.7708380999975,
+            "sam2_end": 306.7204648000188,
+            "sam3_start": 306.72066190000623,
+            "sam3_end": 321.82066170009784
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 468.54277559998445,
+            "sam1_end": 472.3568126000464,
+            "sam2_start": 472.3569579999894,
+            "sam2_end": 478.0737525000004,
+            "sam3_start": 478.0740079000825,
+            "sam3_end": 483.4742774000624
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            4.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 608.8366861999966,
+            "sam1_end": 612.0072680000449,
+            "sam2_start": 612.0073570000241,
+            "sam2_end": 615.4925161000574,
+            "sam3_start": 615.4926907999907,
+            "sam3_end": 618.1757533000782
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            3.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 751.5316869000671,
+            "sam1_end": 755.8614048000891,
+            "sam2_start": 755.8615624000086,
+            "sam2_end": 759.9934087999864,
+            "sam3_start": 759.9935001000995,
+            "sam3_end": 768.4608004000038
+          },
+          "trusted": true
+        }
+      }
+    ]
+  },
+  {
+    "participant_id": 21,
+    "focus": {
+      "mean": 4.25,
+      "all_ratings": [
+        4.0,
+        4.0,
+        5.0,
+        4.0
+      ]
+    },
+    "opinion": 3.0,
+    "timestamp_start": "2025-11-19 15h51.17.318425 +0100",
+    "timestamp_end": 1763564602.21674,
+    "stimuli": [
+      {
+        "video_id": "18840567-hd_1920_1080_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            4.0,
+            1.0,
+            2.0
+          ],
+          "timestamps": {
+            "sam1_start": 259.15427430009004,
+            "sam1_end": 266.19091460003983,
+            "sam2_start": 266.19110860000364,
+            "sam2_end": 268.80672800005414,
+            "sam3_start": 268.80696570000146,
+            "sam3_end": 287.52474340004846
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "5768645-uhd_3840_2160_25fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            2.0,
+            3.0,
+            4.0
+          ],
+          "timestamps": {
+            "sam1_start": 424.6790401000762,
+            "sam1_end": 429.8926478000358,
+            "sam2_start": 429.892782800016,
+            "sam2_end": 434.6093057000544,
+            "sam3_start": 434.60942950006574,
+            "sam3_end": 439.74468020000495
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "11946387_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "Human Generated",
+          "sam": [
+            5.0,
+            4.0,
+            5.0
+          ],
+          "timestamps": {
+            "sam1_start": 572.585829900112,
+            "sam1_end": 575.3279598000227,
+            "sam2_start": 575.328110100003,
+            "sam2_end": 578.0120683000423,
+            "sam3_start": 578.0122229000553,
+            "sam3_end": 581.695379700046
+          },
+          "trusted": true
+        }
+      },
+      {
+        "video_id": "4171487-uhd_3840_2160_30fps.mp4",
+        "video_response": {
+          "belief": "AI Generated",
+          "sam": [
+            4.0,
+            4.0,
+            3.0
+          ],
+          "timestamps": {
+            "sam1_start": 705.3782097001094,
+            "sam1_end": 710.279871600098,
+            "sam2_start": 710.2799640001031,
+            "sam2_end": 713.1304634000408,
+            "sam3_start": 713.1305987000233,
+            "sam3_end": 715.2975457001012
+          },
+          "trusted": true
+        }
+      }
+    ]
+  }
+]
