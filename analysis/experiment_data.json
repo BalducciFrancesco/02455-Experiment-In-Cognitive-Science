@@ -12,7 +12,7 @@
     },
     "opinion": 2.0,
     "timestamp_start": "2025-11-12 14h45.49.380213 +0100",
-    "timestamp_end": 1762955895.835112,
+    "timestamp_end": "2025-11-12 14h58.15.835112 +0100",
     "stimuli": [
       {
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
@@ -109,7 +109,7 @@
     },
     "opinion": 4.0,
     "timestamp_start": "2025-11-12 15h07.02.441991 +0100",
-    "timestamp_end": 1762957107.305174,
+    "timestamp_end": "2025-11-12 15h18.27.305174 +0100",
     "stimuli": [
       {
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
@@ -206,7 +206,7 @@
     },
     "opinion": 3.0,
     "timestamp_start": "2025-11-12 15h28.33.887873 +0100",
-    "timestamp_end": 1762958457.389694,
+    "timestamp_end": "2025-11-12 15h40.57.389694 +0100",
     "stimuli": [
       {
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
@@ -303,7 +303,7 @@
     },
     "opinion": 2.0,
     "timestamp_start": "2025-11-12 15h50.03.543173 +0100",
-    "timestamp_end": 1762959752.384257,
+    "timestamp_end": "2025-11-12 16h02.32.384257 +0100",
     "stimuli": [
       {
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
@@ -400,7 +400,7 @@
     },
     "opinion": 1.0,
     "timestamp_start": "2025-11-13 13h27.35.396197 +0100",
-    "timestamp_end": 1763037684.62208,
+    "timestamp_end": "2025-11-13 13h41.24.622080 +0100",
     "stimuli": [
       {
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
@@ -497,7 +497,7 @@
     },
     "opinion": 3.0,
     "timestamp_start": "2025-11-13 13h55.51.890442 +0100",
-    "timestamp_end": 1763039352.3604572,
+    "timestamp_end": "2025-11-13 14h09.12.360457 +0100",
     "stimuli": [
       {
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
@@ -594,7 +594,7 @@
     },
     "opinion": 3.0,
     "timestamp_start": "2025-11-14 15h41.09.126886 +0100",
-    "timestamp_end": 1763132416.070648,
+    "timestamp_end": "2025-11-14 16h00.16.070648 +0100",
     "stimuli": [
       {
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
@@ -691,7 +691,7 @@
     },
     "opinion": 5.0,
     "timestamp_start": "2025-11-15 09h47.32.159301 +0100",
-    "timestamp_end": 1763197324.3743613,
+    "timestamp_end": "2025-11-15 10h02.04.374361 +0100",
     "stimuli": [
       {
         "video_id": "11946387_3840_2160_30fps.mp4",
@@ -788,7 +788,7 @@
     },
     "opinion": 4.0,
     "timestamp_start": "2025-11-15 10h16.37.803044 +0100",
-    "timestamp_end": 1763199104.281412,
+    "timestamp_end": "2025-11-15 10h31.44.281412 +0100",
     "stimuli": [
       {
         "video_id": "11946387_3840_2160_30fps.mp4",
@@ -885,7 +885,7 @@
     },
     "opinion": 4.0,
     "timestamp_start": "2025-11-17 14h32.02.990507 +0100",
-    "timestamp_end": 1763387179.116207,
+    "timestamp_end": "2025-11-17 14h46.19.116207 +0100",
     "stimuli": [
       {
         "video_id": "11946387_3840_2160_30fps.mp4",
@@ -982,7 +982,7 @@
     },
     "opinion": 4.0,
     "timestamp_start": "2025-11-19 13h39.06.282580 +0100",
-    "timestamp_end": 1763556716.289767,
+    "timestamp_end": "2025-11-19 13h51.56.289767 +0100",
     "stimuli": [
       {
         "video_id": "11946387_3840_2160_30fps.mp4",
@@ -1079,7 +1079,7 @@
     },
     "opinion": 4.0,
     "timestamp_start": "2025-11-19 14h03.03.978009 +0100",
-    "timestamp_end": 1763558183.9922986,
+    "timestamp_end": "2025-11-19 14h16.23.992299 +0100",
     "stimuli": [
       {
         "video_id": "11946387_3840_2160_30fps.mp4",
@@ -1176,7 +1176,7 @@
     },
     "opinion": 3.0,
     "timestamp_start": "2025-11-19 14h27.28.037360 +0100",
-    "timestamp_end": 1763559674.42076,
+    "timestamp_end": "2025-11-19 14h41.14.420760 +0100",
     "stimuli": [
       {
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
@@ -1273,7 +1273,7 @@
     },
     "opinion": 2.0,
     "timestamp_start": "2025-11-19 14h59.20.219368 +0100",
-    "timestamp_end": 1763561632.7689843,
+    "timestamp_end": "2025-11-19 15h13.52.768984 +0100",
     "stimuli": [
       {
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
@@ -1370,7 +1370,7 @@
     },
     "opinion": 4.0,
     "timestamp_start": "2025-11-19 15h27.23.219381 +0100",
-    "timestamp_end": 1763563224.1336198,
+    "timestamp_end": "2025-11-19 15h40.24.133620 +0100",
     "stimuli": [
       {
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
@@ -1467,7 +1467,7 @@
     },
     "opinion": 3.0,
     "timestamp_start": "2025-11-19 15h51.17.318425 +0100",
-    "timestamp_end": 1763564602.21674,
+    "timestamp_end": "2025-11-19 16h03.22.216740 +0100",
     "stimuli": [
       {
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
