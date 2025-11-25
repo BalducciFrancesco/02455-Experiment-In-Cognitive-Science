@@ -18,7 +18,7 @@
         "id": 1,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 14h48.11.057149 +0100",
-        "video_end": "2025-11-12 14h50.03.398395 +0100",
+        "video_end": "2025-11-12 14h50.03.210741 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -41,7 +41,7 @@
         "id": 2,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-12 14h50.45.373178 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 14h52.44.736872 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -64,7 +64,7 @@
         "id": 3,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-12 14h53.44.781367 +0100",
-        "video_end": "2025-11-12 14h55.28.381354 +0100",
+        "video_end": "2025-11-12 14h55.28.232647 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -87,7 +87,7 @@
         "id": 4,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 14h55.59.815905 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 14h57.59.434466 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -127,7 +127,7 @@
         "id": 1,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 15h09.20.239487 +0100",
-        "video_end": "2025-11-12 15h11.12.543948 +0100",
+        "video_end": "2025-11-12 15h11.12.381528 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -150,7 +150,7 @@
         "id": 2,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 15h11.51.012628 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 15h13.50.538286 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -173,7 +173,7 @@
         "id": 3,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-12 15h14.08.093403 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 15h16.07.502963 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -196,7 +196,7 @@
         "id": 4,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-12 15h16.27.395041 +0100",
-        "video_end": "2025-11-12 15h18.11.025483 +0100",
+        "video_end": "2025-11-12 15h18.10.867636 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -236,7 +236,7 @@
         "id": 1,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 15h30.55.487920 +0100",
-        "video_end": "2025-11-12 15h32.47.770382 +0100",
+        "video_end": "2025-11-12 15h32.47.622341 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -259,7 +259,7 @@
         "id": 2,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 15h33.37.343204 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 15h35.36.916652 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -282,7 +282,7 @@
         "id": 3,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-12 15h36.04.970400 +0100",
-        "video_end": "2025-11-12 15h37.48.591621 +0100",
+        "video_end": "2025-11-12 15h37.48.442913 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -305,7 +305,7 @@
         "id": 4,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-12 15h38.33.643837 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 15h40.33.108758 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -345,7 +345,7 @@
         "id": 1,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 15h52.19.589853 +0100",
-        "video_end": "2025-11-12 15h54.11.910880 +0100",
+        "video_end": "2025-11-12 15h54.11.748231 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -368,7 +368,7 @@
         "id": 2,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-12 15h54.55.736457 +0100",
-        "video_end": "2025-11-12 15h56.39.318772 +0100",
+        "video_end": "2025-11-12 15h56.39.170502 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -391,7 +391,7 @@
         "id": 3,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-12 15h57.31.548375 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 15h59.31.030775 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -414,7 +414,7 @@
         "id": 4,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-12 16h00.11.634766 +0100",
-        "video_end": null,
+        "video_end": "2025-11-12 16h02.11.116771 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -454,7 +454,7 @@
         "id": 1,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 13h30.31.641302 +0100",
-        "video_end": "2025-11-13 13h32.23.972964 +0100",
+        "video_end": "2025-11-13 13h32.23.829390 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -477,7 +477,7 @@
         "id": 2,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-13 13h33.17.557695 +0100",
-        "video_end": "2025-11-13 13h35.00.976447 +0100",
+        "video_end": "2025-11-13 13h35.05.473811 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -500,7 +500,7 @@
         "id": 3,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 13h35.55.851534 +0100",
-        "video_end": "2025-11-13 13h37.55.910896 +0100",
+        "video_end": "2025-11-13 13h37.59.913480 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -523,7 +523,7 @@
         "id": 4,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-13 13h38.47.906439 +0100",
-        "video_end": "2025-11-13 13h40.48.021995 +0100",
+        "video_end": "2025-11-13 13h40.50.317617 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -563,7 +563,7 @@
         "id": 1,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-13 13h59.00.443013 +0100",
-        "video_end": "2025-11-13 14h01.00.543847 +0100",
+        "video_end": "2025-11-13 14h01.41.270065 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -586,7 +586,7 @@
         "id": 2,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 14h02.25.831382 +0100",
-        "video_end": "2025-11-13 14h04.18.054625 +0100",
+        "video_end": "2025-11-13 14h04.21.390205 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -609,7 +609,7 @@
         "id": 3,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 14h04.43.057479 +0100",
-        "video_end": "2025-11-13 14h06.43.118915 +0100",
+        "video_end": "2025-11-13 14h06.46.775560 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -632,7 +632,7 @@
         "id": 4,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-13 14h07.09.981861 +0100",
-        "video_end": "2025-11-13 14h08.53.392683 +0100",
+        "video_end": "2025-11-13 14h08.56.244781 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -672,7 +672,7 @@
         "id": 1,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-13 13h58.30.873200 +0100",
-        "video_end": "2025-11-13 14h00.30.994538 +0100",
+        "video_end": "2025-11-13 14h00.39.110103 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -695,7 +695,7 @@
         "id": 2,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 14h01.50.266876 +0100",
-        "video_end": "2025-11-13 14h03.42.503033 +0100",
+        "video_end": "2025-11-13 14h03.44.859903 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -718,7 +718,7 @@
         "id": 3,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-13 14h04.10.995436 +0100",
-        "video_end": "2025-11-13 14h05.54.588298 +0100",
+        "video_end": "2025-11-13 14h05.54.440622 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -741,7 +741,7 @@
         "id": 4,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 14h06.51.728773 +0100",
-        "video_end": "2025-11-13 14h08.51.791999 +0100",
+        "video_end": "2025-11-13 14h08.53.730289 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -781,7 +781,7 @@
         "id": 1,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-13 15h23.51.474606 +0100",
-        "video_end": "2025-11-13 15h25.51.601528 +0100",
+        "video_end": "2025-11-13 15h26.04.007203 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -804,7 +804,7 @@
         "id": 2,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 15h26.45.780643 +0100",
-        "video_end": "2025-11-13 15h28.45.851269 +0100",
+        "video_end": "2025-11-13 15h28.48.942033 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -827,7 +827,7 @@
         "id": 3,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 15h29.06.242587 +0100",
-        "video_end": "2025-11-13 15h30.58.612875 +0100",
+        "video_end": "2025-11-13 15h30.58.462845 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -850,7 +850,7 @@
         "id": 4,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-13 15h31.14.551079 +0100",
-        "video_end": "2025-11-13 15h32.58.136743 +0100",
+        "video_end": "2025-11-13 15h32.57.986022 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -890,7 +890,7 @@
         "id": 1,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-13 15h58.34.443475 +0100",
-        "video_end": "2025-11-13 16h00.34.571369 +0100",
+        "video_end": "2025-11-13 16h00.43.033992 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -913,7 +913,7 @@
         "id": 2,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 16h01.33.538897 +0100",
-        "video_end": "2025-11-13 16h03.33.600642 +0100",
+        "video_end": "2025-11-13 16h03.36.351507 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -936,7 +936,7 @@
         "id": 3,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-13 16h04.04.800376 +0100",
-        "video_end": "2025-11-13 16h05.48.277636 +0100",
+        "video_end": "2025-11-13 16h05.49.997984 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -959,7 +959,7 @@
         "id": 4,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 16h06.14.481563 +0100",
-        "video_end": "2025-11-13 16h08.06.705758 +0100",
+        "video_end": "2025-11-13 16h08.08.565976 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -999,7 +999,7 @@
         "id": 1,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-13 16h30.25.172415 +0100",
-        "video_end": "2025-11-13 16h32.25.295076 +0100",
+        "video_end": "2025-11-13 16h32.27.238321 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1022,7 +1022,7 @@
         "id": 2,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-13 16h33.36.209229 +0100",
-        "video_end": "2025-11-13 16h35.19.682319 +0100",
+        "video_end": "2025-11-13 16h35.22.334414 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1045,7 +1045,7 @@
         "id": 3,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 16h36.14.343423 +0100",
-        "video_end": "2025-11-13 16h38.06.580812 +0100",
+        "video_end": "2025-11-13 16h38.09.197009 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1068,7 +1068,7 @@
         "id": 4,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-13 16h38.43.622917 +0100",
-        "video_end": "2025-11-13 16h40.43.725038 +0100",
+        "video_end": "2025-11-13 16h40.45.214304 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1108,7 +1108,7 @@
         "id": 1,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-14 15h45.33.931257 +0100",
-        "video_end": "2025-11-14 15h47.34.065432 +0100",
+        "video_end": "2025-11-14 15h47.56.919800 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1131,7 +1131,7 @@
         "id": 2,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-14 15h50.13.729255 +0100",
-        "video_end": "2025-11-14 15h51.57.130253 +0100",
+        "video_end": "2025-11-14 15h52.22.011405 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1154,7 +1154,7 @@
         "id": 3,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-14 15h53.48.804829 +0100",
-        "video_end": "2025-11-14 15h55.48.852252 +0100",
+        "video_end": "2025-11-14 15h56.25.538242 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1177,7 +1177,7 @@
         "id": 4,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-14 15h57.25.488623 +0100",
-        "video_end": "2025-11-14 15h59.17.811239 +0100",
+        "video_end": "2025-11-14 15h59.17.671866 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1217,7 +1217,7 @@
         "id": 1,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-15 09h50.53.140400 +0100",
-        "video_end": "2025-11-15 09h52.53.135811 +0100",
+        "video_end": "2025-11-15 09h53.07.752396 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1240,7 +1240,7 @@
         "id": 2,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-15 09h54.36.739288 +0100",
-        "video_end": "2025-11-15 09h56.28.937605 +0100",
+        "video_end": "2025-11-15 09h56.34.721917 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1263,7 +1263,7 @@
         "id": 3,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-15 09h57.09.241717 +0100",
-        "video_end": "2025-11-15 09h59.09.348077 +0100",
+        "video_end": "2025-11-15 09h59.14.624599 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1286,7 +1286,7 @@
         "id": 4,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-15 09h59.42.725120 +0100",
-        "video_end": "2025-11-15 10h01.26.124219 +0100",
+        "video_end": "2025-11-15 10h01.29.709879 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1326,7 +1326,7 @@
         "id": 1,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-15 10h19.41.904949 +0100",
-        "video_end": "2025-11-15 10h21.41.901880 +0100",
+        "video_end": "2025-11-15 10h21.59.732044 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1349,7 +1349,7 @@
         "id": 2,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-15 10h23.33.455316 +0100",
-        "video_end": "2025-11-15 10h25.25.646479 +0100",
+        "video_end": "2025-11-15 10h25.35.268960 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1372,7 +1372,7 @@
         "id": 3,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-15 10h26.15.978219 +0100",
-        "video_end": "2025-11-15 10h27.59.393660 +0100",
+        "video_end": "2025-11-15 10h28.07.187677 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1395,7 +1395,7 @@
         "id": 4,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-15 10h28.35.692779 +0100",
-        "video_end": "2025-11-15 10h30.35.801949 +0100",
+        "video_end": "2025-11-15 10h30.45.490450 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1435,7 +1435,7 @@
         "id": 1,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-16 16h07.29.648328 +0100",
-        "video_end": "2025-11-16 16h09.29.684659 +0100",
+        "video_end": "2025-11-16 16h09.31.891864 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1458,7 +1458,7 @@
         "id": 2,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-16 16h10.34.623901 +0100",
-        "video_end": "2025-11-16 16h12.34.750552 +0100",
+        "video_end": "2025-11-16 16h12.36.650726 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1481,7 +1481,7 @@
         "id": 3,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-16 16h13.05.157482 +0100",
-        "video_end": "2025-11-16 16h14.57.511560 +0100",
+        "video_end": "2025-11-16 16h14.57.351290 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1504,7 +1504,7 @@
         "id": 4,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-16 16h15.14.101593 +0100",
-        "video_end": "2025-11-16 16h16.57.540620 +0100",
+        "video_end": "2025-11-16 16h16.59.162507 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1544,7 +1544,7 @@
         "id": 1,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-17 14h35.24.067745 +0100",
-        "video_end": "2025-11-17 14h37.24.273877 +0100",
+        "video_end": "2025-11-17 14h37.24.128579 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1567,7 +1567,7 @@
         "id": 2,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-17 14h38.35.002625 +0100",
-        "video_end": "2025-11-17 14h40.35.117496 +0100",
+        "video_end": "2025-11-17 14h40.44.050699 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1590,7 +1590,7 @@
         "id": 3,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-17 14h41.30.159205 +0100",
-        "video_end": "2025-11-17 14h43.13.558597 +0100",
+        "video_end": "2025-11-17 14h43.18.086498 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1613,7 +1613,7 @@
         "id": 4,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-17 14h43.52.962568 +0100",
-        "video_end": "2025-11-17 14h45.45.292047 +0100",
+        "video_end": "2025-11-17 14h45.45.152970 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1653,7 +1653,7 @@
         "id": 1,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 13h42.00.912828 +0100",
-        "video_end": "2025-11-19 13h44.01.123006 +0100",
+        "video_end": "2025-11-19 13h44.00.973989 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1676,7 +1676,7 @@
         "id": 2,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-19 13h44.47.256373 +0100",
-        "video_end": "2025-11-19 13h46.30.672526 +0100",
+        "video_end": "2025-11-19 13h46.33.821914 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1699,7 +1699,7 @@
         "id": 3,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 13h47.05.409343 +0100",
-        "video_end": "2025-11-19 13h48.57.740224 +0100",
+        "video_end": "2025-11-19 13h48.57.601340 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1722,7 +1722,7 @@
         "id": 4,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-19 13h49.23.642534 +0100",
-        "video_end": "2025-11-19 13h51.23.754766 +0100",
+        "video_end": "2025-11-19 13h51.27.376481 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1762,7 +1762,7 @@
         "id": 1,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 14h06.38.177488 +0100",
-        "video_end": "2025-11-19 14h08.38.382611 +0100",
+        "video_end": "2025-11-19 14h08.38.236604 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1785,7 +1785,7 @@
         "id": 2,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-19 14h09.22.284488 +0100",
-        "video_end": "2025-11-19 14h11.05.701986 +0100",
+        "video_end": "2025-11-19 14h11.13.176593 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1808,7 +1808,7 @@
         "id": 3,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-19 14h11.39.546611 +0100",
-        "video_end": "2025-11-19 14h13.39.655351 +0100",
+        "video_end": "2025-11-19 14h13.43.695586 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1831,7 +1831,7 @@
         "id": 4,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 14h14.14.211510 +0100",
-        "video_end": "2025-11-19 14h16.06.559219 +0100",
+        "video_end": "2025-11-19 14h16.06.419408 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1871,7 +1871,7 @@
         "id": 1,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-19 14h30.48.132591 +0100",
-        "video_end": "2025-11-19 14h32.31.554078 +0100",
+        "video_end": "2025-11-19 14h32.43.173890 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1894,7 +1894,7 @@
         "id": 2,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 14h33.19.543923 +0100",
-        "video_end": "2025-11-19 14h35.11.871668 +0100",
+        "video_end": "2025-11-19 14h35.11.732479 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1917,7 +1917,7 @@
         "id": 3,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-19 14h36.09.974193 +0100",
-        "video_end": "2025-11-19 14h38.10.081488 +0100",
+        "video_end": "2025-11-19 14h38.16.278886 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -1940,7 +1940,7 @@
         "id": 4,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 14h38.45.707073 +0100",
-        "video_end": "2025-11-19 14h40.45.754207 +0100",
+        "video_end": "2025-11-19 14h40.51.580804 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -1980,7 +1980,7 @@
         "id": 1,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-19 15h02.41.455427 +0100",
-        "video_end": "2025-11-19 15h04.24.868686 +0100",
+        "video_end": "2025-11-19 15h04.32.900739 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2003,7 +2003,7 @@
         "id": 2,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 15h05.17.066108 +0100",
-        "video_end": "2025-11-19 15h07.09.230637 +0100",
+        "video_end": "2025-11-19 15h07.12.338561 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -2026,7 +2026,7 @@
         "id": 3,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 15h08.40.347837 +0100",
-        "video_end": "2025-11-19 15h10.40.413594 +0100",
+        "video_end": "2025-11-19 15h10.42.573540 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2049,7 +2049,7 @@
         "id": 4,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-19 15h11.14.450231 +0100",
-        "video_end": "2025-11-19 15h13.14.559264 +0100",
+        "video_end": "2025-11-19 15h13.19.509389 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -2089,7 +2089,7 @@
         "id": 1,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-19 15h30.19.800787 +0100",
-        "video_end": "2025-11-19 15h32.03.235672 +0100",
+        "video_end": "2025-11-19 15h32.06.688393 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2112,7 +2112,7 @@
         "id": 2,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-19 15h33.08.711561 +0100",
-        "video_end": "2025-11-19 15h35.08.815888 +0100",
+        "video_end": "2025-11-19 15h35.11.625030 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -2135,7 +2135,7 @@
         "id": 3,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 15h35.38.173270 +0100",
-        "video_end": "2025-11-19 15h37.30.358129 +0100",
+        "video_end": "2025-11-19 15h37.31.944720 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -2158,7 +2158,7 @@
         "id": 4,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 15h37.52.430896 +0100",
-        "video_end": "2025-11-19 15h39.52.492817 +0100",
+        "video_end": "2025-11-19 15h39.54.629009 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2198,7 +2198,7 @@
         "id": 1,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-19 15h53.52.924892 +0100",
-        "video_end": "2025-11-19 15h55.36.491488 +0100",
+        "video_end": "2025-11-19 15h55.36.336859 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2221,7 +2221,7 @@
         "id": 2,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-19 15h56.18.537441 +0100",
-        "video_end": "2025-11-19 15h58.18.639043 +0100",
+        "video_end": "2025-11-19 15h58.21.893955 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -2244,7 +2244,7 @@
         "id": 3,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 15h58.48.429198 +0100",
-        "video_end": "2025-11-19 16h00.48.479440 +0100",
+        "video_end": "2025-11-19 16h00.49.795630 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2267,7 +2267,7 @@
         "id": 4,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 16h01.08.413177 +0100",
-        "video_end": "2025-11-19 16h03.00.604530 +0100",
+        "video_end": "2025-11-19 16h03.02.565344 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -2307,7 +2307,7 @@
         "id": 1,
         "video_id": "18840567-hd_1920_1080_30fps.mp4",
         "video_start": "2025-11-19 16h30.24.595595 +0100",
-        "video_end": "2025-11-19 16h32.08.012957 +0100",
+        "video_end": "2025-11-19 16h32.12.816061 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2330,7 +2330,7 @@
         "id": 2,
         "video_id": "11946387_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 16h33.07.935321 +0100",
-        "video_end": "2025-11-19 16h35.07.968452 +0100",
+        "video_end": "2025-11-19 16h35.12.251681 +0100",
         "video_response": {
           "belief": "Human Generated",
           "sam": [
@@ -2353,7 +2353,7 @@
         "id": 3,
         "video_id": "4171487-uhd_3840_2160_30fps.mp4",
         "video_start": "2025-11-19 16h36.09.553621 +0100",
-        "video_end": "2025-11-19 16h38.01.743907 +0100",
+        "video_end": "2025-11-19 16h38.03.236765 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
@@ -2376,7 +2376,7 @@
         "id": 4,
         "video_id": "5768645-uhd_3840_2160_25fps.mp4",
         "video_start": "2025-11-19 16h38.36.444501 +0100",
-        "video_end": "2025-11-19 16h40.36.554720 +0100",
+        "video_end": "2025-11-19 16h40.38.488891 +0100",
         "video_response": {
           "belief": "AI Generated",
           "sam": [
