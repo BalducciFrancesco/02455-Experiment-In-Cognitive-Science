@@ -123,7 +123,7 @@ rmssd_labeled.head()
 # # Save to CSV
 
 # %%
-rmssd_labeled.to_csv("rmssd_per_video_with_labels.csv", index=False)
+rmssd_labeled.to_csv("rmssd_per_video.csv", index=False)
 
 
 # %% [markdown]
