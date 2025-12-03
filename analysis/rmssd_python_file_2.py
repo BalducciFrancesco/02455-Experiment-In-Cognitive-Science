@@ -14,7 +14,7 @@ def rmssd_from_rr(rr_ms: pd.Series) -> float:
     diff = np.diff(rr)
     return np.sqrt(np.mean(diff**2))
 
-def load_rmssd_df(json_path: str = "experiment_with_heart_rate.json"):
+def load_rmssd_df(json_path: str = "experiment_data_with_hr.json"):
     """
     Loads experiment JSON (relative to this file), computes RMSSD per video stimulus,
     and returns rmssd_df (long) and mean_table (participant-level pivot).
@@ -59,7 +59,7 @@ def load_rmssd_df(json_path: str = "experiment_with_heart_rate.json"):
     mean_table = rmssd_df.pivot_table(index="participant_id", columns="belief", values="RMSSD_ms", aggfunc="mean")
     return rmssd_df, mean_table
 
-rmssd_df, mean_table = load_rmssd_df("experiment_with_heart_rate.json")
+rmssd_df, mean_table = load_rmssd_df("experiment_data_with_hr.json")
 rmssd_df.to_csv("rmssd_per_video.csv", index=False)
 
 rmssd_df

@@ -21,7 +21,7 @@ def rmssd_from_rr(rr_ms: pd.Series) -> float:
 
 # %%
 # load merged experiment JSON
-with open("experiment_with_heart_rate.json", "r", encoding="utf-8") as f:
+with open("experiment_data_with_hr.json", "r", encoding="utf-8") as f:
     participants = json.load(f)
 
 # %% [markdown]
