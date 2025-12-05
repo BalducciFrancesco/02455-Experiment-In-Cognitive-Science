@@ -1156,7 +1156,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     fixation_cross.status = FINISHED
                     fixation_cross.setAutoDraw(False)
             
-            # check for quit (typically the Esc key)
+            # check for quit (typically the Esc key)s
             if defaultKeyboard.getKeys(keyList=["escape"]):
                 thisExp.status = FINISHED
             if thisExp.status == FINISHED or endExpNow:
